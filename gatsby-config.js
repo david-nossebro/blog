@@ -2,13 +2,13 @@ module.exports = {
   siteMetadata: {
     title: `Gatsby Starter Blog`,
     author: {
-      name: `Kyle Mathews`,
-      summary: `who lives and works in San Francisco building useful things.`,
+      name: `David Berg`,
+      summary: `who lives in Sweden and love nature adventures.`,
     },
     description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsby-starter-blog-demo.netlify.com/`,
+    siteUrl: `https://epic-kilby-234579.netlify.com/`,
     social: {
-      twitter: `kylemathews`,
+      instagram: `david.nossebro`,
     },
   },
   plugins: [
