@@ -14,11 +14,7 @@ export const BlogPostTemplate = ({
 }) => {
   return (
     <section>
-      <SEO
-        title={title}
-        description={description}
-      />
-      <article>
+
         <header>
           <h1
             style={{
@@ -39,15 +35,6 @@ export const BlogPostTemplate = ({
           </p>
         </header>
         <section dangerouslySetInnerHTML={{ __html: postHtml }} />
-        <hr
-          style={{
-            marginBottom: rhythm(1),
-          }}
-        />
-        <footer>
-          <Bio />
-        </footer>
-      </article>
     </section>
   )
 }
@@ -56,15 +43,30 @@ const BlogPost = ({ data, pageContext, location }) => {
 
   const { previous, next } = pageContext
   const title = data.site.siteMetadata.title;
+  const description = data.markdownRemark.frontmatter.description;
 
   return (
     <Layout location={location} title={title}>
-      <BlogPostTemplate
-          description={data.markdownRemark.frontmatter.description}
-          date={data.markdownRemark.frontmatter.date}
-          title={data.markdownRemark.frontmatter.title}
-          postHtml={data.markdownRemark.html}
+      <SEO
+        title={title}
+        description={description}
       />
+      <article>
+        <BlogPostTemplate
+            description={description}
+            date={data.markdownRemark.frontmatter.date}
+            title={data.markdownRemark.frontmatter.title}
+            postHtml={data.markdownRemark.html}
+        />
+        <hr
+          style={{
+            marginBottom: rhythm(1)
+          }}
+        />
+        <footer>
+          <Bio />
+        </footer>
+      </article>
       <nav>
         <ul
           style={{
