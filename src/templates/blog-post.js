@@ -6,16 +6,17 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm, scale } from "../utils/typography"
 
-const BlogPostTemplate = ({ data, pageContext, location }) => {
-  const post = data.markdownRemark
-  const siteTitle = data.site.siteMetadata.title
-  const { previous, next } = pageContext
-
+export const BlogPostTemplate = ({
+  description,
+  date,
+  title,
+  postHtml,
+}) => {
   return (
-    <Layout location={location} title={siteTitle}>
+    <section>
       <SEO
-        title={post.frontmatter.title}
-        description={post.frontmatter.description || post.excerpt}
+        title={title}
+        description={description}
       />
       <article>
         <header>
@@ -25,7 +26,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
               marginBottom: 0,
             }}
           >
-            {post.frontmatter.title}
+            {title}
           </h1>
           <p
             style={{
@@ -34,10 +35,10 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
               marginBottom: rhythm(1),
             }}
           >
-            {post.frontmatter.date}
+            {date}
           </p>
         </header>
-        <section dangerouslySetInnerHTML={{ __html: post.html }} />
+        <section dangerouslySetInnerHTML={{ __html: postHtml }} />
         <hr
           style={{
             marginBottom: rhythm(1),
@@ -47,7 +48,23 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
           <Bio />
         </footer>
       </article>
+    </section>
+  )
+}
 
+const BlogPost = ({ data, pageContext, location }) => {
+
+  const { previous, next } = pageContext
+  const title = data.site.siteMetadata.title;
+
+  return (
+    <Layout location={location} title={title}>
+      <BlogPostTemplate
+          description={data.markdownRemark.frontmatter.description}
+          date={data.markdownRemark.frontmatter.date}
+          title={data.markdownRemark.frontmatter.title}
+          postHtml={data.markdownRemark.html}
+      />
       <nav>
         <ul
           style={{
@@ -78,7 +95,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
   )
 }
 
-export default BlogPostTemplate
+export default BlogPost
 
 export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!) {
