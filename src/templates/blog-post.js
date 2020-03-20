@@ -56,7 +56,7 @@ const BlogPost = ({ data, pageContext, location }) => {
             description={description}
             date={data.markdownRemark.frontmatter.date}
             title={data.markdownRemark.frontmatter.title}
-            postHtml={data.markdownRemark.html}
+            postHtml={data.markdownRemark.html.toString()}
         />
         <hr
           style={{
