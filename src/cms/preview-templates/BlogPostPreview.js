@@ -3,9 +3,13 @@ import PropTypes from 'prop-types'
 import { BlogPostTemplate } from '../../templates/blog-post'
 
 const BlogPostPreview = ({ entry, widgetFor }) => {
+
+ const body = widgetFor('body');
+ console.log("TEH BODY!!!! - ", body);
+
   return (
     <BlogPostTemplate
-        postHtml={widgetFor('body')}
+        postHtml={body}
         description={entry.getIn(['data', 'description'])}
         title={entry.getIn(['data', 'title'])}
         date={entry.getIn(['data', 'date'])}
