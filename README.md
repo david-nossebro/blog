@@ -8,7 +8,7 @@ https://wiki.openstreetmap.org/wiki/Stylesheets
 
 TODO
 [X] Netlify cms with images
-[]  Netlify cms with Google login
+[X]  Netlify cms with Google login
 []  Register with google analytics
 []  Add about section
 []  Add English and Swedish support
