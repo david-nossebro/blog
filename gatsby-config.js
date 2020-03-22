@@ -39,6 +39,7 @@ module.exports = {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
+          // This plugin makes netlify cms work with relative images.
           'gatsby-remark-relative-images',
           {
             resolve: `gatsby-remark-images`,
