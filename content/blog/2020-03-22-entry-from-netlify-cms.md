@@ -9,4 +9,4 @@ What if this works!?!?
 
 And here comes an image
 
-![](/img/img_20190415_212418.jpg)
+![Some image](./images/img_20190415_212418.jpg)
