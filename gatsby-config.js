@@ -2,12 +2,12 @@
 module.exports = {
 
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
+    title: `Blog`,
     author: {
       name: `David Berg`,
       summary: `who lives in Sweden and love nature adventures.`,
     },
-    description: `A starter blog demonstrating what Gatsby can do.`,
+    description: `Life is an adventure and this is mine.`,
     siteUrl: `https://epic-kilby-234579.netlify.com/`,
     social: {
       instagram: `david.nossebro`,
@@ -19,6 +19,13 @@ module.exports = {
       options: {
         path: `${__dirname}/content/blog`,
         name: `blog`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/content/about`,
+        name: `about`,
       },
     },
     {
@@ -67,6 +74,7 @@ module.exports = {
         respectDNT: true,
       },
     },
+    // Providing RSS feed under /rss.xml
     `gatsby-plugin-feed`,
     {
       resolve: `gatsby-plugin-manifest`,

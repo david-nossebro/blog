@@ -3,14 +3,21 @@ Links to resourses:
 https://openmaptiles.org/styles/
 https://wiki.openstreetmap.org/wiki/Stylesheets
 
+https://github.com/automata/awesome-jamstack
 
-
+https://www.gatsbyjs.org/blog/2019-08-27-roll-your-own-comment-system/
 
 TODO
 [X] Netlify cms with images
 [X]  Netlify cms with Google login
-[]  Register with google analytics
+[X]  Register with google analytics
 []  Add about section
+    [X] First working draft
+    []  Refactor gatsby-node.js and split into separate files
+    []  Make markdown types configurable (e.g. "blog" and "about")
+    []  Break out graphql queries to a reusable util
+[]  Refactor to use typescript?
+[]  Refactor CSS -> What to use?
 []  Add English and Swedish support
 []  Plot blog entries to map
     []  Add OpenStreetMap to new "Follow my tracks" map
@@ -21,7 +28,11 @@ TODO
 []  Investigate support for scheduled publishing
 []  Find domain name (check if free on social media as well)
 []  Investigate how to optimize google index
+[]  Add link to RSS feed (/rss.xml) and information about how to use it.
 []  Investigate ways to let people support (Patreon, Affiliators links to gear etc)
+[]  Add commenting support
+[]  Add search functionality
+[]  Choose typography style - https://kyleamathews.github.io/typography.js/
 []  Investigate if possible to integrate with Garmin InReach (Is there an API?)
 []  Think about how to add a "trip" and track it on the blog. (e.g. Distance left and Distance covered)
 
