@@ -28,6 +28,7 @@ TODO
     []  If two plots are closer than 100 meter, show two entries on same plot.
 []  Investigate support for scheduled publishing
 []  Find domain name (check if free on social media as well)
+[]  Optimize lighthouse score (https://developers.google.com/web/tools/lighthouse)
 []  Investigate how to optimize google index
 []  Add link to RSS feed (/rss.xml) and information about how to use it.
 []  Investigate ways to let people support (Patreon, Affiliators links to gear etc)
