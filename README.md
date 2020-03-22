@@ -13,6 +13,7 @@ TODO
 [X]  Register with google analytics
 []  Add about section
     [X] First working draft
+    []  Add about to netlify cms
     []  Refactor gatsby-node.js and split into separate files
     []  Make markdown types configurable (e.g. "blog" and "about")
     []  Break out graphql queries to a reusable util
