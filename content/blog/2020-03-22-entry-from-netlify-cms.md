@@ -5,8 +5,6 @@ description: This entry is added from netlify cms
 ---
 What if this works!?!?
 
-
-
 And here comes an image
 
-![Some image](./images/img_20190415_212418.jpg)
+![Some image](/images/img_20190415_212431.jpg)
