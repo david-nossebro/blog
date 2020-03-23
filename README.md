@@ -15,12 +15,12 @@ TODO
 [X]  Register with google analytics
 []  Add about section
     [X] First working draft
-    []  Add about to netlify cms
+    [X]  Add about to netlify cms
     [X]  Refactor gatsby-node.js and split into separate files
     [X]  Make markdown types configurable (e.g. "blog" and "about")
     []  Break out graphql queries to a reusable util
-[]  Refactor to use typescript?
 []  Refactor CSS -> What to use?
+[]  Refactor to use typescript?
 []  Add English and Swedish support
 []  Plot blog entries to map
     []  Add OpenStreetMap to new "Follow my tracks" map
