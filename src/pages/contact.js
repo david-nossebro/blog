@@ -10,7 +10,12 @@ const Contact = ({ data }) => {
 
   const siteTitle = data.site.siteMetadata.title
 
-  const succesfulForm = useQueryParam("submit-form", false);
+  let succesfulForm;
+  if(typeof window !== `undefined`) {
+    succesfulForm = useQueryParam("submit-form", false)
+  } else {
+    succesfulForm = false
+  }
 
   return (
     <Layout title={siteTitle}>
