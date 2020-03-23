@@ -12,9 +12,6 @@ module.exports = {
     social: {
       instagram: `david.nossebro`,
     },
-    markdownPageSections: [
-      {name: "About", template: "markdown-page-template.js"}
-    ]
   },
   plugins: [
     {
@@ -41,7 +38,7 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/content/blog/images`,
+        path: `${__dirname}/content/images`,
         name: `images`,
       },
     },

@@ -7,4 +7,4 @@ What if this works!?!?
 
 And here comes an image
 
-![Some image](/images/img_20190415_212431.jpg)
+![Some image](../images/img_20190415_212431.jpg)

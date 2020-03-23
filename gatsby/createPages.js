@@ -5,12 +5,7 @@ exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
 
   createBlogPosts(graphql, createPage)
-
-  if (siteMetadata.markdownPageSections) {
-    siteMetadata.markdownPageSections.forEach(section => {
-      createMarkdownPages(section, graphql, createPage)
-    })
-  }
+  createMarkdownPages("about", "./src/templates/markdown-page-template.js", graphql, createPage)
 }
 
 const createBlogPosts = async (graphql, createPage) => {
@@ -34,14 +29,14 @@ const createBlogPosts = async (graphql, createPage) => {
   })
 }
 
-const createMarkdownPages = async (section, graphql, createPage) => {
-  const result = await getAllMarkdownPagesFromCollection(section.name, graphql)
+const createMarkdownPages = async (name, template, graphql, createPage) => {
+  const result = await getAllMarkdownPagesFromCollection(name, graphql)
   const pages = result.data.allMarkdownRemark.edges
 
   pages.forEach(p => {
     createPage({
       path: p.node.fields.slug,
-      component: path.resolve(`./src/templates/` + section.template),
+      component: path.resolve(template),
       context: {
         slug: p.node.fields.slug,
       },

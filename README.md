@@ -7,7 +7,7 @@ https://wiki.openstreetmap.org/wiki/Stylesheets
 
 https://github.com/automata/awesome-jamstack
 
-https://www.gatsbyjs.org/blog/2019-08-27-roll-your-own-comment-system/
+https://github.com/Vagr9K/gatsby-advanced-starter
 
 TODO
 [X] Netlify cms with images
@@ -16,8 +16,8 @@ TODO
 []  Add about section
     [X] First working draft
     []  Add about to netlify cms
-    []  Refactor gatsby-node.js and split into separate files
-    []  Make markdown types configurable (e.g. "blog" and "about")
+    [X]  Refactor gatsby-node.js and split into separate files
+    [X]  Make markdown types configurable (e.g. "blog" and "about")
     []  Break out graphql queries to a reusable util
 []  Refactor to use typescript?
 []  Refactor CSS -> What to use?
@@ -33,7 +33,7 @@ TODO
 []  Optimize lighthouse score (https://developers.google.com/web/tools/lighthouse)
 []  Investigate how to optimize google index
 []  Add link to RSS feed (/rss.xml) and information about how to use it.
-[]  Investigate ways to let people support (Patreon, Affiliators links to gear etc)
+[]  Investigate ways to let people support (Patreon, Affiliators links to gear, https://ko-fi.com/ etc)
 []  Add commenting support
 []  Add search functionality
 []  Choose typography style - https://kyleamathews.github.io/typography.js/
