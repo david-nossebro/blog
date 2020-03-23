@@ -50,7 +50,14 @@ const Contact = ({ data }) => {
           <p>
             <button type="submit">Send</button>
             {succesfulForm &&
-              <span>The form was succesfully submitted, thank you!</span> 
+              <span
+                style={{
+                  color: `green`,
+                  marginLeft: `0.5em`
+                }}
+              >
+                The form was succesfully submitted, thank you!
+              </span> 
             }
           </p>
         </form>
