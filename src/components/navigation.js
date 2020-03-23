@@ -1,6 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
-
+import { rhythm } from "../utils/typography"
 
 const Navigation = () => {
 
@@ -8,6 +8,7 @@ const Navigation = () => {
         "list-style-type": `none`,
         margin: 0,
         padding: 0,
+        marginBottom: rhythm(1),
     }
 
     const liStyle = {

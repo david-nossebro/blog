@@ -19,19 +19,7 @@ const MarkdownPage = ({ data }) => {
         description={description}
       />
       <article>
-        <section>
-          <header>
-            <h1
-              style={{
-                marginTop: rhythm(1),
-                marginBottom: 0,
-              }}
-            >
-              {title}
-            </h1>
-          </header>
-          <section dangerouslySetInnerHTML={{ __html: html }} />
-        </section>
+        <section dangerouslySetInnerHTML={{ __html: html }} />
         <hr
           style={{
             marginBottom: rhythm(1)
