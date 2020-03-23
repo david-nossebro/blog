@@ -12,6 +12,9 @@ module.exports = {
     social: {
       instagram: `david.nossebro`,
     },
+    markdownPageSections: [
+      {name: "About", template: "markdown-page-template.js"}
+    ]
   },
   plugins: [
     {

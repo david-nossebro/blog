@@ -1,5 +1,7 @@
 Links to resourses:
 
+https://analytics.google.com
+
 https://openmaptiles.org/styles/
 https://wiki.openstreetmap.org/wiki/Stylesheets
 

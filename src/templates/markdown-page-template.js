@@ -1,66 +1,53 @@
 import React from "react"
 import { graphql } from "gatsby"
 
-import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm } from "../utils/typography"
 
-export const AboutTemplate = ({
-  title,
-  postHtml,
-}) => {
-  return (
-    <section>
+const MarkdownPage = ({ data, location }) => {
 
-        <header>
-          <h1
-            style={{
-              marginTop: rhythm(1),
-              marginBottom: 0,
-            }}
-          >
-            {title}
-          </h1>
-        </header>
-        <section dangerouslySetInnerHTML={{ __html: postHtml }} />
-    </section>
-  )
-}
-
-const About = ({ data, location }) => {
-
-  const title = data.site.siteMetadata.title;
+  const siteTitle = data.site.siteMetadata.title;
+  const title = data.markdownRemark.frontmatter.title;
   const description = data.markdownRemark.frontmatter.description;
+  const html = data.markdownRemark.html;
 
   return (
-    <Layout location={location} title={title}>
+    <Layout location={location} title={siteTitle}>
       <SEO
         title={title}
         description={description}
       />
       <article>
-        <AboutTemplate
-            title={data.markdownRemark.frontmatter.title}
-            postHtml={data.markdownRemark.html}
-        />
+        <section>
+          <header>
+            <h1
+              style={{
+                marginTop: rhythm(1),
+                marginBottom: 0,
+              }}
+            >
+              {title}
+            </h1>
+          </header>
+          <section dangerouslySetInnerHTML={{ __html: html }} />
+        </section>
         <hr
           style={{
             marginBottom: rhythm(1)
           }}
         />
         <footer>
-          <Bio />
         </footer>
       </article>
     </Layout>
   )
 }
 
-export default About
+export default MarkdownPage
 
 export const pageQuery = graphql`
-  query AboutBySlug($slug: String!) {
+  query MarkdownPageBySlug($slug: String!) {
     site {
       siteMetadata {
         title

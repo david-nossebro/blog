@@ -1,15 +1,32 @@
 import React from "react"
-import { Link } from "gatsby"
-
+import { Link, useStaticQuery, graphql } from "gatsby"
 
 const Navigation = () => {
+  const data = useStaticQuery(graphql`
+    query SiteMetaQuery {
+      site {
+        siteMetadata {
+          markdownPageSections {
+              name
+          }
+        }
+      }
+    }
+  `)
 
-    return (
-        <ul>
-            <li><Link to="/">Blog</Link></li>
-            <li><Link to="/about">About</Link></li>
-        </ul>
-    )
+  const menuItems = []
+  data.site.siteMetadata.markdownPageSections.forEach(section => {
+    menuItems.push(<li key={section.name.toLowerCase()}><Link to={"/" + section.name.toLowerCase()}>{section.name}</Link></li>)
+  })
+
+  return (
+    <ul>
+      <li key="blog">
+        <Link to="/">Blog</Link>
+      </li>
+      {menuItems}
+    </ul>
+  )
 }
 
 export default Navigation
