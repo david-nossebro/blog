@@ -1,7 +1,6 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 
-import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm, scale } from "../utils/typography"
@@ -38,14 +37,14 @@ export const BlogPostTemplate = ({
   )
 }
 
-const BlogPost = ({ data, pageContext, location }) => {
+const BlogPost = ({ data, pageContext }) => {
 
   const { previous, next } = pageContext
   const title = data.site.siteMetadata.title;
   const description = data.markdownRemark.frontmatter.description;
 
   return (
-    <Layout location={location} title={title}>
+    <Layout title={title}>
       <SEO
         title={title}
         description={description}
@@ -61,9 +60,7 @@ const BlogPost = ({ data, pageContext, location }) => {
             marginBottom: rhythm(1)
           }}
         />
-        <footer>
-          <Bio />
-        </footer>
+        <footer /> 
       </article>
       <nav>
         <ul

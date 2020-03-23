@@ -5,7 +5,7 @@ module.exports = {
     title: `Blog`,
     author: {
       name: `David Berg`,
-      summary: `who lives in Sweden and love nature adventures.`,
+      summary: `who lives in Sweden and loves nature adventures.`,
     },
     description: `Life is an adventure and this is mine.`,
     siteUrl: `https://epic-kilby-234579.netlify.com/`,

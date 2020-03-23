@@ -40,7 +40,7 @@ const Bio = () => {
     <div
       style={{
         display: `flex`,
-        marginBottom: rhythm(2.5),
+        marginBottom: rhythm(1 / 4),
       }}
     >
       <Image
@@ -57,7 +57,7 @@ const Bio = () => {
         }}
       />
       <p>
-        Written by <strong>{author.name}</strong> {author.summary}
+        Created by <strong>{author.name}</strong> {author.summary}
         {` `}
         You should follow him on {` `}
         <a href={`https://instagram.com/${social.instagram}`}>

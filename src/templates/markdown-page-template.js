@@ -5,7 +5,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm } from "../utils/typography"
 
-const MarkdownPage = ({ data, location }) => {
+const MarkdownPage = ({ data }) => {
 
   const siteTitle = data.site.siteMetadata.title;
   const title = data.markdownRemark.frontmatter.title;
@@ -13,7 +13,7 @@ const MarkdownPage = ({ data, location }) => {
   const html = data.markdownRemark.html;
 
   return (
-    <Layout location={location} title={siteTitle}>
+    <Layout title={siteTitle}>
       <SEO
         title={title}
         description={description}
