@@ -4,10 +4,13 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm } from "../utils/typography"
 import { Facebook, Instagram, Youtube, Slack, Gmail } from "@icons-pack/react-simple-icons"
+import { useQueryParam } from "gatsby-query-params";
 
 const Contact = ({ data }) => {
 
   const siteTitle = data.site.siteMetadata.title
+
+  const succesfulForm = useQueryParam("submit-form", false);
 
   return (
     <Layout title={siteTitle}>
@@ -46,6 +49,9 @@ const Contact = ({ data }) => {
           </p>
           <p>
             <button type="submit">Send</button>
+            {succesfulForm &&
+              <span>The form was succesfully submitted, thank you!</span> 
+            }
           </p>
         </form>
 
