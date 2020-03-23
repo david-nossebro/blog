@@ -33,7 +33,7 @@ const Contact = ({ data }) => {
           Or you can use this form.
         </p>
         
-        <form name="contact" data-netlify="true" data-netlify-honeypot="bot-field" action="/contact">
+        <form name="contact" data-netlify="true" data-netlify-honeypot="bot-field" action="/contact?submit-form=success">
           <input type="hidden" name="form-name" value="contact" />
           <p>
             <label>Name <input type="text" name="name" /></label>
