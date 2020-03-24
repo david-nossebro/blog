@@ -4,6 +4,11 @@ https://analytics.google.com
 
 https://openmaptiles.org/styles/
 https://wiki.openstreetmap.org/wiki/Stylesheets
+https://leaflet-extras.github.io/leaflet-providers/preview/
+
+https://leaflet-extras.github.io/leaflet-providers/preview/#filter=Esri.WorldImagery -> Add image map as an alternative
+
+https://hiking.waymarkedtrails.org
 
 https://github.com/automata/awesome-jamstack
 
@@ -25,11 +30,16 @@ TODO
 []  Refactor CSS -> What to use?
 []  Refactor to use typescript?
 []  Plot blog entries to map
-    []  Add OpenStreetMap to new "Follow my tracks" map
-    []  Plot blog entries with location to map
-    []  Add link from plot to blog (Header and Date?)
-    []  Add link from blog to plot
-    []  If two plots are closer than 100 meter, show two entries on same plot.
+    [X]  Add OpenStreetMap to new "Tracks" map
+    [X]  Plot blog entries with location to map
+    []  Fix zoom and location for map
+    []  Add support for "fullscreen" map
+    []  Add map to blog entries with a location
+    []  Add support for "flight picture" layer
+    []  Add support for adding plot to map in netlify cms (if possible through a widget?)
+    []  If two plots are close to each other, they can be merged under the same plot
+    []  Add support for plotting routes
+    []  Add support for multiple plot types (e.g. Camp, View, Bath etc, idea is to have something pretty generic)
 []  Investigate support for scheduled publishing
 []  Add English and Swedish support (https://www.gatsbyjs.org/blog/2017-10-17-building-i18n-with-gatsby/)
 []  Find domain name (check if free on social media as well)

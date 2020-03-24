@@ -5,7 +5,7 @@ module.exports = {
     title: `Blog`,
     author: {
       name: `David Berg`,
-      summary: `who lives in Sweden and loves nature adventures.`,
+      summary: `who lives in Sweden and loves outdoor adventures.`,
     },
     description: `Life is an adventure and this is mine.`,
     siteUrl: `https://epic-kilby-234579.netlify.com/`,
@@ -67,6 +67,12 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    {
+      resolve: 'gatsby-plugin-react-leaflet',
+      options: {
+        linkStyles: true // (default: true) Enable/disable loading stylesheets via CDN
+      }
+    },
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {

@@ -5,7 +5,7 @@ import { rhythm } from "../utils/typography"
 const Navigation = () => {
 
     const ulStyle = {
-        "list-style-type": `none`,
+        listStyleType: `none`,
         margin: 0,
         padding: 0,
         marginBottom: rhythm(1),
