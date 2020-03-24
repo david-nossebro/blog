@@ -38,14 +38,20 @@ TODO
     [X]  Add support for "fullscreen" map
     [X]  Add support for "flight picture" layer
     []  Add support for adding plot to map in netlify cms (if possible through a widget?)
+    []  Add support for plotting routes on blog-map
+    []  Add support for multiple plot types on blog-map (e.g. Camp, View, Bath etc, idea is to have something pretty generic)
     []  If two plots are close to each other, they can be merged under the same plot
-    []  Add support for plotting routes
-    []  Add support for multiple plot types (e.g. Camp, View, Bath etc, idea is to have something pretty generic)
+[]  Add tags to blog entries, use in SEO
+[]  Add different styles for different kind of blog entrie
+    []  Adventure
+    []  Gear review
+    []  Recipe
+[]  Show if a blog entry has a map
 []  Investigate support for scheduled publishing
 []  Add English and Swedish support (https://www.gatsbyjs.org/blog/2017-10-17-building-i18n-with-gatsby/)
 []  Find domain name (check if free on social media as well)
 []  Optimize lighthouse score (https://developers.google.com/web/tools/lighthouse)
-[]  Investigate how to optimize google index
+[]  Investigate how to optimize google index - Sitemap?
 []  Add link to RSS feed (/rss.xml) and information about how to use it.
 []  Investigate ways to let people support (Patreon, Affiliators links to gear, https://ko-fi.com/ etc)
 []  Add commenting support
@@ -53,6 +59,21 @@ TODO
 []  Choose typography style - https://kyleamathews.github.io/typography.js/
 []  Investigate if possible to integrate with Garmin InReach (Is there an API?)
 []  Think about how to add a "trip" and track it on the blog. (e.g. Distance left and Distance covered)
+
+
+Add content
+[]  About
+    []  SE
+    []  EN
+[]  Tools
+    []  SE
+    []  EN
+[]  Contact
+    []  SE
+    []  EN
+[]  First blog entry
+    []  SE
+    []  EN
 
 Ideér
 
