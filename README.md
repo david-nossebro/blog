@@ -34,9 +34,9 @@ TODO
     [X]  Add OpenStreetMap to new "Tracks" map
     [X]  Plot blog entries with location to map
     [X]  Fix zoom and location for map
-    []  Add support for "fullscreen" map
-    []  Add map to blog entries with a location
-    []  Add support for "flight picture" layer
+    [X]  Add map to blog entries with a location
+    [X]  Add support for "fullscreen" map
+    [X]  Add support for "flight picture" layer
     []  Add support for adding plot to map in netlify cms (if possible through a widget?)
     []  If two plots are close to each other, they can be merged under the same plot
     []  Add support for plotting routes

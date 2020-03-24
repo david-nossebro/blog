@@ -44,9 +44,9 @@ const Layout = ({ title, children }) => {
           fontSize: `0.8em`
         }}
       >
-        © {new Date().getFullYear()}, Built with blood, sweat and tears (and
+        © {new Date().getFullYear()}, Built with blood, sweat and tears (and some
         {` `}
-        <a href="https://www.gatsbyjs.org">Gatsby</a>)
+        <Link to="/tools">tools</Link>)
       </footer>
     </div>
   )

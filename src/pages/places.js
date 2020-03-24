@@ -3,7 +3,7 @@ import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm } from "../utils/typography"
-import LeafletMap from "../components/leaflet-map"
+import PlacesMap from "../components/places-map"
 
 const Places = ({ data }) => {
 
@@ -15,7 +15,7 @@ const Places = ({ data }) => {
     console.log("This is coordinates: ", edge.node.frontmatter.coordinates)
 
     const plotContent = <div>
-      <h2
+      <h3
         style={{
           marginTop: 0,
           marginBottom: rhythm(1 / 4),
@@ -24,7 +24,8 @@ const Places = ({ data }) => {
         <Link style={{ boxShadow: `none` }} to={edge.node.fields.slug}>
           {edge.node.frontmatter.title}
         </Link>
-      </h2>
+      </h3>
+      <small>{edge.node.frontmatter.date}</small>
       <p>{edge.node.frontmatter.description || edge.node.excerpt}</p>
     </div>
 
@@ -37,10 +38,8 @@ const Places = ({ data }) => {
  
   return (
     <Layout title={siteTitle}>
-      <SEO title="Tracks" />
-      <div className="leaflet-map-container">
-        <LeafletMap markers={markers} />
-      </div>
+      <SEO title="Places" />
+      <PlacesMap height="450px" width="100%" markers={markers} />
       <hr
         style={{
           marginBottom: rhythm(1)

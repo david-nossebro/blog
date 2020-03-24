@@ -18,10 +18,10 @@ const Navigation = () => {
 
     return (
         <ul style={ulStyle}>
-            <li style={liStyle}><Link to="/">Blog</Link></li>
-            <li style={liStyle}><Link to="/places">Places</Link></li>
-            <li style={liStyle}><Link to="/about">About</Link></li>
-            <li style={liStyle}><Link to="/contact">Contact</Link></li>
+            <li style={liStyle}><Link style={{ boxShadow: `none` }} to="/">Blog</Link></li>
+            <li style={liStyle}><Link style={{ boxShadow: `none` }} to="/places">Places</Link></li>
+            <li style={liStyle}><Link style={{ boxShadow: `none` }} to="/about">About</Link></li>
+            <li style={liStyle}><Link style={{ boxShadow: `none` }} to="/contact">Contact</Link></li>
         </ul>
     )
 }

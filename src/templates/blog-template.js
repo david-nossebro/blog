@@ -4,11 +4,13 @@ import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm, scale } from "../utils/typography"
+import BlogMap from "../components/blog-map"
 
 export const BlogPostTemplate = ({
   date,
   title,
   postHtml,
+  coordinates
 }) => {
   return (
     <section>
@@ -33,6 +35,9 @@ export const BlogPostTemplate = ({
           </p>
         </header>
         <section dangerouslySetInnerHTML={{ __html: postHtml }} />
+        { coordinates &&
+          <BlogMap height="350px" width="100%" position={coordinates} />
+        }
     </section>
   )
 }
@@ -53,6 +58,7 @@ const BlogPost = ({ data, pageContext }) => {
         <BlogPostTemplate
             date={data.markdownRemark.frontmatter.date}
             title={data.markdownRemark.frontmatter.title}
+            coordinates={data.markdownRemark.frontmatter.coordinates}
             postHtml={data.markdownRemark.html}
         />
         <hr
@@ -109,6 +115,7 @@ export const pageQuery = graphql`
         title
         date(formatString: "MMMM DD, YYYY")
         description
+        coordinates
       }
     }
   }
