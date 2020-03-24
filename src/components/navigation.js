@@ -19,7 +19,7 @@ const Navigation = () => {
     return (
         <ul style={ulStyle}>
             <li style={liStyle}><Link to="/">Blog</Link></li>
-            <li style={liStyle}><Link to="/tracks">Tracks</Link></li>
+            <li style={liStyle}><Link to="/places">Places</Link></li>
             <li style={liStyle}><Link to="/about">About</Link></li>
             <li style={liStyle}><Link to="/contact">Contact</Link></li>
         </ul>

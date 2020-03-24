@@ -5,7 +5,7 @@ import SEO from "../components/seo"
 import { rhythm } from "../utils/typography"
 import LeafletMap from "../components/leaflet-map"
 
-const Tracks = ({ data }) => {
+const Places = ({ data }) => {
 
   const siteTitle = data.site.siteMetadata.title
 
@@ -30,19 +30,11 @@ const Tracks = ({ data }) => {
 
     markers.push({
       position: edge.node.frontmatter.coordinates,
+      title: edge.node.frontmatter.title,
       content: plotContent
     })
   })
  
-  /*
-  const markers = [
-    {
-      position: [51.505, -0.09],
-      content: <h3>Hejsan</h3>
-    },
-  ]
-  */
-
   return (
     <Layout title={siteTitle}>
       <SEO title="Tracks" />
@@ -58,7 +50,7 @@ const Tracks = ({ data }) => {
   )
 }
 
-export default Tracks
+export default Places
 
 export const pageQuery = graphql`
   query {

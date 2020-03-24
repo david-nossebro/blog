@@ -27,12 +27,13 @@ TODO
 []  Add contact section
     [X] Add contact form
     []  Add social media links (partly done)  
+[]  TEST - Add way to generate 1000 entries and see how the site behaves
 []  Refactor CSS -> What to use?
 []  Refactor to use typescript?
 []  Plot blog entries to map
     [X]  Add OpenStreetMap to new "Tracks" map
     [X]  Plot blog entries with location to map
-    []  Fix zoom and location for map
+    [X]  Fix zoom and location for map
     []  Add support for "fullscreen" map
     []  Add map to blog entries with a location
     []  Add support for "flight picture" layer

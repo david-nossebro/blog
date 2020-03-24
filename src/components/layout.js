@@ -39,10 +39,14 @@ const Layout = ({ title, children }) => {
       <Bio />
       <Navigation />
       <main>{children}</main>
-      <footer>
-        © {new Date().getFullYear()}, Built with
+      <footer
+        style={{
+          fontSize: `0.8em`
+        }}
+      >
+        © {new Date().getFullYear()}, Built with blood, sweat and tears (and
         {` `}
-        <a href="https://www.gatsbyjs.org">Gatsby</a>
+        <a href="https://www.gatsbyjs.org">Gatsby</a>)
       </footer>
     </div>
   )
