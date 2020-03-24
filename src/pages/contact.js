@@ -4,7 +4,6 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm } from "../utils/typography"
 import { Facebook, Instagram, Youtube, Slack, Gmail } from "@icons-pack/react-simple-icons"
-import { useQueryParam } from "gatsby-query-params";
 
 const Contact = ({ data }) => {
 
@@ -12,7 +11,8 @@ const Contact = ({ data }) => {
 
   let succesfulForm;
   if(typeof window !== `undefined`) {
-    succesfulForm = useQueryParam("submit-form", false)
+    const urlParams = new URLSearchParams(window.location.search);
+    succesfulForm = urlParams.get('submit-form') || false
   } else {
     succesfulForm = false
   }

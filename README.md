@@ -19,9 +19,11 @@ TODO
     [X]  Refactor gatsby-node.js and split into separate files
     [X]  Make markdown types configurable (e.g. "blog" and "about")
     []  Break out graphql queries to a reusable util
+[]  Add contact section
+    [X] Add contact form
+    []  Add social media links (partly done)  
 []  Refactor CSS -> What to use?
 []  Refactor to use typescript?
-[]  Add English and Swedish support
 []  Plot blog entries to map
     []  Add OpenStreetMap to new "Follow my tracks" map
     []  Plot blog entries with location to map
@@ -29,6 +31,7 @@ TODO
     []  Add link from blog to plot
     []  If two plots are closer than 100 meter, show two entries on same plot.
 []  Investigate support for scheduled publishing
+[]  Add English and Swedish support (https://www.gatsbyjs.org/blog/2017-10-17-building-i18n-with-gatsby/)
 []  Find domain name (check if free on social media as well)
 []  Optimize lighthouse score (https://developers.google.com/web/tools/lighthouse)
 []  Investigate how to optimize google index
