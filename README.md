@@ -14,11 +14,11 @@ TODO
     [X] Add contact form
     []  Add social media links (partly done)  
 []  TEST - Add way to generate 1000 entries and see how the site behaves
-[]  Refactor CSS -> What to use?
-[]  Create component for "SocialLinks" on contact page
+[X]  Refactor CSS to styled-components
+[X]  Create component for "SocialLinks" on contact page
 []  Create component for form on contact page
 []  Create component for Previous/Next navigation in blog-template
-[]  Refactor to use typescript?
+[]  Refactor to use typescript
 []  Plot blog entries to map
     [X]  Add OpenStreetMap to new "Tracks" map
     [X]  Plot blog entries with location to map

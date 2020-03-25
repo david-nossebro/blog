@@ -2,41 +2,9 @@ import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import SocialLink from "../components/social-link"
 import { rhythm } from "../utils/typography"
-import { Facebook, Instagram, Youtube, Slack, Gmail } from "@icons-pack/react-simple-icons"
-
 import styled from "styled-components"
-import {css} from "styled-components"
-
-const iconStyle = css`
-  width: 3em;
-  height: 3em; 
-  margin-right: 1em;
-`
-
-const FacebookIcon = styled(Facebook)`
-  ${iconStyle}
-`
-
-const InstagramIcon = styled(Instagram)`
-  ${iconStyle}
-`
-
-const YoutubeIcon = styled(Youtube)`
-  ${iconStyle}
-`
-
-const SlackIcon = styled(Slack)`
-  ${iconStyle}
-`
-
-const GmailIcon = styled(Gmail)`
-  ${iconStyle}
-`
-
-const SocialLink = styled.a`
-  box-shadow: none;
-`
 
 const SuccessFormMessage = styled.span`
   color: green;
@@ -64,15 +32,11 @@ const Contact = ({ data }) => {
         </p>
 
         <p>
-          <SocialLink href="https://instagram.com/david.nossebro/" target="_blank" rel="noopener noreferrer">
-            <InstagramIcon color="#E4405F" />
-          </SocialLink>
-          <YoutubeIcon color="#FF0000" />
-          <SlackIcon color="#4A154B" />
-          <FacebookIcon color="#1877F2" />
-          <SocialLink href="mailto:david.nossebro@gmail.com">
-            <GmailIcon color="#D14836" />
-          </SocialLink>
+          <SocialLink type="instagram" href="https://instagram.com/david.nossebro/" />
+          <SocialLink type="youtube" href="https://todo.do" />
+          <SocialLink type="slack" href="https://todo.do" />
+          <SocialLink type="facebook" href="https://todo.do" />
+          <SocialLink type="mail" href="https://todo.do" />
         </p>
 
         <p>
