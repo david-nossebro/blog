@@ -19,6 +19,9 @@ TODO
 []  Create component for form on contact page
 []  Create component for Previous/Next navigation in blog-template
 []  Refactor to use typescript
+[]  Add linting rules
+    [] For code
+    [] For style
 []  Plot blog entries to map
     [X]  Add OpenStreetMap to new "Tracks" map
     [X]  Plot blog entries with location to map
