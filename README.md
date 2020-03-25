@@ -1,20 +1,6 @@
-Links to resourses:
-
-https://analytics.google.com
-
-https://openmaptiles.org/styles/
-https://wiki.openstreetmap.org/wiki/Stylesheets
-https://leaflet-extras.github.io/leaflet-providers/preview/
-
-https://leaflet-extras.github.io/leaflet-providers/preview/#filter=Esri.WorldImagery -> Add image map as an alternative
-
-https://hiking.waymarkedtrails.org
-
-https://github.com/automata/awesome-jamstack
-
-https://github.com/Vagr9K/gatsby-advanced-starter
 
 TODO
+
 [X] Netlify cms with images
 [X]  Netlify cms with Google login
 [X]  Register with google analytics
@@ -29,6 +15,9 @@ TODO
     []  Add social media links (partly done)  
 []  TEST - Add way to generate 1000 entries and see how the site behaves
 []  Refactor CSS -> What to use?
+[]  Create component for "SocialLinks" on contact page
+[]  Create component for form on contact page
+[]  Create component for Previous/Next navigation in blog-template
 []  Refactor to use typescript?
 []  Plot blog entries to map
     [X]  Add OpenStreetMap to new "Tracks" map
@@ -62,6 +51,7 @@ TODO
 
 
 Add content
+
 []  About
     []  SE
     []  EN
@@ -75,10 +65,29 @@ Add content
     []  SE
     []  EN
 
-Ideér
+ 
+IDEAS
 
 For the map, add a section called "Follow my tracks" with a map. Plot all blog entries
 where location has been added. In the blog view if location is added also add a link "show on map".
 
-Domänideér
+Domains
 walkidiotwalk.com
+
+
+LINKS:
+
+https://analytics.google.com
+
+https://openmaptiles.org/styles/
+https://wiki.openstreetmap.org/wiki/Stylesheets
+https://leaflet-extras.github.io/leaflet-providers/preview/
+
+https://leaflet-extras.github.io/leaflet-providers/preview/#filter=Esri.WorldImagery -> Add image map as an alternative
+https://react-leaflet.js.org
+
+https://hiking.waymarkedtrails.org
+
+https://github.com/automata/awesome-jamstack
+
+https://github.com/Vagr9K/gatsby-advanced-starter

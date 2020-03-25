@@ -1,15 +1,19 @@
-/**
- * Bio component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.org/docs/use-static-query/
- */
-
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Image from "gatsby-image"
+import styled from "styled-components"
 
 import { rhythm } from "../utils/typography"
+
+const Container = styled.div`
+  display: flex;
+  margin-bottom: ${rhythm(1 / 4)};
+`
+
+const BioImage = styled(Image)`
+  margin-right: ${rhythm(1 / 2)};
+  marginBottom: 0;
+`
 
 const Bio = () => {
   const data = useStaticQuery(graphql`
@@ -34,23 +38,16 @@ const Bio = () => {
       }
     }
   `)
-
   const { author, social } = data.site.siteMetadata
+  
   return (
-    <div
-      style={{
-        display: `flex`,
-        marginBottom: rhythm(1 / 4),
-      }}
-    >
-      <Image
+    <Container>
+      {/* Could not get rid of the styling in here for some reason. The gatsby image tag is weird... */}
+      <BioImage
         fixed={data.avatar.childImageSharp.fixed}
         alt={author.name}
         style={{
-          marginRight: rhythm(1 / 2),
-          marginBottom: 0,
-          minWidth: 50,
-          borderRadius: `100%`,
+          minWidth: 50
         }}
         imgStyle={{
           borderRadius: `50%`,
@@ -65,7 +62,7 @@ const Bio = () => {
         </a>
         .
       </p>
-    </div>
+    </Container>
   )
 }
 

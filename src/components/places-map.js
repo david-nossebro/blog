@@ -2,8 +2,14 @@ import React from "react"
 import { Map, Marker, Popup, TileLayer, LayersControl } from 'react-leaflet'
 import FullscreenControl from 'react-leaflet-fullscreen';
 import 'react-leaflet-fullscreen/dist/styles.css'
+import styled from "styled-components"
 
 const PlacesMap = ({markers, width, height}) => {
+
+  const PlacesMap = styled(Map)`
+    width: ${width};
+    height: ${height};
+  `
 
   // Can not render map server side
   if (typeof window !== 'undefined') {
@@ -11,11 +17,9 @@ const PlacesMap = ({markers, width, height}) => {
     const bounds = getBounds(markers);
 
     return (
-      <Map bounds={bounds} boundsOptions={{padding: [50, 50]}}
-        style={{
-          width: width,
-          height: height
-        }}
+      <PlacesMap 
+        bounds={bounds} 
+        boundsOptions={{padding: [50, 50]}}
       >
         <LayersControl position="topright">
           <LayersControl.BaseLayer checked name="Topographic">
@@ -35,7 +39,7 @@ const PlacesMap = ({markers, width, height}) => {
             </Marker>
           )}
         </LayersControl>
-      </Map>
+      </PlacesMap>
     )
   } else {
     return null

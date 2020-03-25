@@ -4,52 +4,63 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm } from "../utils/typography"
 import PlacesMap from "../components/places-map"
+import styled from "styled-components"
+
+const MarkerPopupTitle = styled.h3`
+  margin-top: 0;
+  margin-bottom: ${rhythm(1 / 4)};
+`
+
+const MarkerPopupTitleLink = styled(Link)`
+  box-shadow: none;
+`
+
+const BottomDivider = styled.hr`
+  margin-bottom: ${rhythm(1)};
+`
 
 const Places = ({ data }) => {
 
   const siteTitle = data.site.siteMetadata.title
+  const markers = createMarkers(data);
+ 
+  return (
+    <Layout title={siteTitle}>
+      <SEO title="Places" />
+      <PlacesMap height="450px" width="100%" markers={markers} />
+      <BottomDivider />
+    </Layout>
+  )
+}
 
+export default Places
+
+const createMarkers = (data) => {
   const markers = []
   data.allMarkdownRemark.edges.forEach(edge => {
-
-    console.log("This is coordinates: ", edge.node.frontmatter.coordinates)
-
-    const plotContent = <div>
-      <h3
-        style={{
-          marginTop: 0,
-          marginBottom: rhythm(1 / 4),
-        }}
-      >
-        <Link style={{ boxShadow: `none` }} to={edge.node.fields.slug}>
-          {edge.node.frontmatter.title}
-        </Link>
-      </h3>
-      <small>{edge.node.frontmatter.date}</small>
-      <p>{edge.node.frontmatter.description || edge.node.excerpt}</p>
-    </div>
-
+    const plotContent = createPlotContent(edge.node);
     markers.push({
       position: edge.node.frontmatter.coordinates,
       title: edge.node.frontmatter.title,
       content: plotContent
     })
   })
- 
-  return (
-    <Layout title={siteTitle}>
-      <SEO title="Places" />
-      <PlacesMap height="450px" width="100%" markers={markers} />
-      <hr
-        style={{
-          marginBottom: rhythm(1)
-        }}
-      />
-    </Layout>
-  )
+  return markers;
 }
 
-export default Places
+const createPlotContent = (node) => {
+  return (
+    <div>
+      <MarkerPopupTitle>
+        <MarkerPopupTitleLink to={node.fields.slug}>
+          {node.frontmatter.title}
+        </MarkerPopupTitleLink>
+      </MarkerPopupTitle>
+      <small>{node.frontmatter.date}</small>
+      <p>{node.frontmatter.description || node.excerpt}</p>
+    </div>
+  )
+}
 
 export const pageQuery = graphql`
   query {

@@ -4,51 +4,51 @@ import { Link } from "gatsby"
 import { rhythm, scale } from "../utils/typography"
 import Navigation from "../components/navigation"
 import Bio from "../components/bio"
+import styled from "styled-components"
+
+const Container = styled.div`
+  margin-left: auto;
+  margin-right: auto;
+  max-width: ${rhythm(24)};
+  padding: ${rhythm(1.5)} ${rhythm(3 / 4)};
+`
+
+const SiteTitle = styled.h1({
+  ...scale(1.5),
+  marginBottom: rhythm(1),
+  marginTop: 0,
+})
+
+const SiteTitleLink = styled(Link)`
+  box-shadow: none;
+  text-decoration: none;
+  color: inherit;
+`
+
+const Footer = styled.footer`
+  font-size: 0.8em;
+`
 
 const Layout = ({ title, children }) => {
 
   return (
-    <div
-      style={{
-        marginLeft: `auto`,
-        marginRight: `auto`,
-        maxWidth: rhythm(24),
-        padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
-      }}
-    >
+    <Container>
       <header>
-        <h1
-          style={{
-            ...scale(1.5),
-            marginBottom: rhythm(1),
-            marginTop: 0,
-          }}
-        >
-          <Link
-            style={{
-              boxShadow: `none`,
-              textDecoration: `none`,
-              color: `inherit`,
-            }}
-            to={`/`}
-          >
+        <SiteTitle>
+          <SiteTitleLink to={`/`}>
             {title}
-          </Link>
-        </h1>
+          </SiteTitleLink>
+        </SiteTitle>
       </header>
       <Bio />
       <Navigation />
-      <main>{children}</main>
-      <footer
-        style={{
-          fontSize: `0.8em`
-        }}
-      >
+        <main>{children}</main>
+      <Footer>
         © {new Date().getFullYear()}, Built with blood, sweat and tears (and some
         {` `}
         <Link to="/tools">tools</Link>)
-      </footer>
-    </div>
+      </Footer>
+    </Container>
   )
 }
 

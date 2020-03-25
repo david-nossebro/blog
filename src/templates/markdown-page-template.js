@@ -1,9 +1,13 @@
 import React from "react"
 import { graphql } from "gatsby"
-
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm } from "../utils/typography"
+import styled from "styled-components"
+
+const BottomDivider = styled.hr`
+  margin-bottom: ${rhythm(1)};
+`
 
 const MarkdownPage = ({ data }) => {
 
@@ -20,13 +24,8 @@ const MarkdownPage = ({ data }) => {
       />
       <article>
         <section dangerouslySetInnerHTML={{ __html: html }} />
-        <hr
-          style={{
-            marginBottom: rhythm(1)
-          }}
-        />
-        <footer>
-        </footer>
+        <BottomDivider />
+        <footer />
       </article>
     </Layout>
   )

@@ -101,6 +101,7 @@ module.exports = {
         pathToConfigModule: `src/utils/typography`,
       },
     },
+    `gatsby-plugin-styled-components`,
     `gatsby-plugin-netlify-cms`,
     'gatsby-plugin-netlify',
   ],

@@ -1,9 +1,18 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
-
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm } from "../utils/typography"
+import styled from "styled-components"
+
+const BlogTitle = styled.h3`
+  margin-top: 0;
+  margin-bottom: ${rhythm(1 / 4)};
+`
+
+const BlogTitleLink = styled(Link)`
+  box-shadow: none;
+`
 
 const BlogIndex = ({ data }) => {
   const siteTitle = data.site.siteMetadata.title
@@ -17,16 +26,11 @@ const BlogIndex = ({ data }) => {
         return (
           <article key={node.fields.slug}>
             <header>
-              <h3
-                style={{
-                  marginTop: 0,
-                  marginBottom: rhythm(1 / 4),
-                }}
-              >
-                <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
+              <BlogTitle>
+                <BlogTitleLink to={node.fields.slug}>
                   {title}
-                </Link>
-              </h3>
+                </BlogTitleLink>
+              </BlogTitle>
               <small>{node.frontmatter.date}</small>
             </header>
             <section>

@@ -1,83 +1,68 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
-
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm, scale } from "../utils/typography"
 import BlogMap from "../components/blog-map"
+import styled from "styled-components"
 
-export const BlogPostTemplate = ({
-  date,
-  title,
-  postHtml,
-  coordinates
-}) => {
-  return (
-    <section>
+const BlogTitle = styled.h1`
+  margin-top: ${rhythm(1)};
+  margin-bottom: 0;
+`
 
-        <header>
-          <h1
-            style={{
-              marginTop: rhythm(1),
-              marginBottom: 0,
-            }}
-          >
-            {title}
-          </h1>
-          <p
-            style={{
-              ...scale(-1 / 5),
-              display: `block`,
-              marginBottom: rhythm(1),
-            }}
-          >
-            {date}
-          </p>
-        </header>
-        <section dangerouslySetInnerHTML={{ __html: postHtml }} />
-        { coordinates &&
-          <BlogMap height="350px" width="100%" position={coordinates} />
-        }
-    </section>
-  )
-}
+const BlogDate = styled.p({
+  ...scale(-1 / 5),
+  display: `block`,
+  marginBottom: rhythm(1),
+})
 
-const BlogPost = ({ data, pageContext }) => {
+const BottomDivider = styled.hr`
+  margin-bottom: ${rhythm(1)};
+`
+
+const NextPreviousNavList = styled.ul`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  list-style: none;
+  padding: 0;
+`
+
+const BlogTemplate = ({ data, pageContext }) => {
 
   const { previous, next } = pageContext
-  const title = data.site.siteMetadata.title;
+  const siteTitle = data.site.siteMetadata.title;
+  const title = data.markdownRemark.frontmatter.title;
   const description = data.markdownRemark.frontmatter.description;
+  const date = data.markdownRemark.frontmatter.date;
+  const coordinates = data.markdownRemark.frontmatter.coordinates;
+  const html = data.markdownRemark.html;
 
   return (
-    <Layout title={title}>
+    <Layout title={siteTitle}>
       <SEO
         title={title}
         description={description}
       />
       <article>
-        <BlogPostTemplate
-            date={data.markdownRemark.frontmatter.date}
-            title={data.markdownRemark.frontmatter.title}
-            coordinates={data.markdownRemark.frontmatter.coordinates}
-            postHtml={data.markdownRemark.html}
-        />
-        <hr
-          style={{
-            marginBottom: rhythm(1)
-          }}
-        />
+        <header>
+          <BlogTitle>
+            {title}
+          </BlogTitle>
+          <BlogDate>
+            {date}
+          </BlogDate>
+        </header>
+        <section dangerouslySetInnerHTML={{ __html: html }} />
+        { coordinates &&
+          <BlogMap height="350px" width="100%" position={coordinates} />
+        }
+        <BottomDivider />
         <footer /> 
       </article>
       <nav>
-        <ul
-          style={{
-            display: `flex`,
-            flexWrap: `wrap`,
-            justifyContent: `space-between`,
-            listStyle: `none`,
-            padding: 0,
-          }}
-        >
+        <NextPreviousNavList>
           <li>
             {previous && (
               <Link to={previous.fields.slug} rel="prev">
@@ -92,13 +77,13 @@ const BlogPost = ({ data, pageContext }) => {
               </Link>
             )}
           </li>
-        </ul>
+        </NextPreviousNavList>
       </nav>
     </Layout>
   )
 }
 
-export default BlogPost
+export default BlogTemplate
 
 export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!) {

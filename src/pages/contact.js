@@ -5,6 +5,44 @@ import SEO from "../components/seo"
 import { rhythm } from "../utils/typography"
 import { Facebook, Instagram, Youtube, Slack, Gmail } from "@icons-pack/react-simple-icons"
 
+import styled from "styled-components"
+import {css} from "styled-components"
+
+const iconStyle = css`
+  width: 3em;
+  height: 3em; 
+  margin-right: 1em;
+`
+
+const FacebookIcon = styled(Facebook)`
+  ${iconStyle}
+`
+
+const InstagramIcon = styled(Instagram)`
+  ${iconStyle}
+`
+
+const YoutubeIcon = styled(Youtube)`
+  ${iconStyle}
+`
+
+const SlackIcon = styled(Slack)`
+  ${iconStyle}
+`
+
+const GmailIcon = styled(Gmail)`
+  ${iconStyle}
+`
+
+const SocialLink = styled.a`
+  box-shadow: none;
+`
+
+const SuccessFormMessage = styled.span`
+  color: green;
+  margin-left: 0.5em;
+`
+
 const Contact = ({ data }) => {
 
   const siteTitle = data.site.siteMetadata.title
@@ -26,15 +64,15 @@ const Contact = ({ data }) => {
         </p>
 
         <p>
-          <a href="https://instagram.com/david.nossebro/" target="_blank" rel="noopener noreferrer">
-            <Instagram color="#E4405F" style={{width: `3em`, height: `3em`, marginRight: `1em`}} />
-          </a>
-          <Youtube color="#FF0000" style={{width: `3em`, height: `3em`, marginRight: `1em`}} />
-          <Slack color="#4A154B" style={{width: `3em`, height: `3em`, marginRight: `1em`}} />
-          <Facebook color="#1877F2" style={{width: `3em`, height: `3em`, marginRight: `1em`}} />
-          <a href="mailto:david.nossebro@gmail.com">
-            <Gmail color="#D14836" style={{width: `3em`, height: `3em`, marginRight: `1em`}} />
-          </a>
+          <SocialLink href="https://instagram.com/david.nossebro/" target="_blank" rel="noopener noreferrer">
+            <InstagramIcon color="#E4405F" />
+          </SocialLink>
+          <YoutubeIcon color="#FF0000" />
+          <SlackIcon color="#4A154B" />
+          <FacebookIcon color="#1877F2" />
+          <SocialLink href="mailto:david.nossebro@gmail.com">
+            <GmailIcon color="#D14836" />
+          </SocialLink>
         </p>
 
         <p>
@@ -55,14 +93,9 @@ const Contact = ({ data }) => {
           <p>
             <button type="submit">Send</button>
             {succesfulForm &&
-              <span
-                style={{
-                  color: `green`,
-                  marginLeft: `0.5em`
-                }}
-              >
+              <SuccessFormMessage>
                 The form was succesfully submitted, thank you!
-              </span> 
+              </SuccessFormMessage> 
             }
           </p>
         </form>
