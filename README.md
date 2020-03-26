@@ -10,14 +10,17 @@ TODO
     [X]  Refactor gatsby-node.js and split into separate files
     [X]  Make markdown types configurable (e.g. "blog" and "about")
     []  Break out graphql queries to a reusable util
+        [] Look into graphql fragments and best practices for structure
 []  Add contact section
     [X] Add contact form
-    []  Add social media links (partly done)  
+    [X]  Add social media links
+    []  Set social media links
+    []  Style form
 []  TEST - Add way to generate 1000 entries and see how the site behaves
 [X]  Refactor CSS to styled-components
 [X]  Create component for "SocialLinks" on contact page
 [X]  Create component for form on contact page
-[]  Create component for Previous/Next navigation in blog-template
+[X]  Create component for Previous/Next navigation in blog-template
 []  Refactor to use typescript
     [X]  Add tooling
     [X]  Refactor codebase

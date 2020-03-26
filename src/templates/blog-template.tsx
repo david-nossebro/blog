@@ -1,10 +1,11 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm, scale } from "../utils/typography"
 import BlogMap from "../components/blog-map"
+import PreviousNextNavigation from "../components/previous-next-navigation"
 import styled from "styled-components"
+import graphQlQueries from "../utils/graphql-queries"
 
 const BlogTitle = styled.h1`
   margin-top: ${rhythm(1)};
@@ -19,14 +20,6 @@ const BlogDate = styled.p({
 
 const BottomDivider = styled.hr`
   margin-bottom: ${rhythm(1)};
-`
-
-const NextPreviousNavList = styled.ul`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  list-style: none;
-  padding: 0;
 `
 
 const BlogTemplate = ({ data, pageContext }): JSX.Element => {
@@ -53,47 +46,11 @@ const BlogTemplate = ({ data, pageContext }): JSX.Element => {
         <BottomDivider />
         <footer />
       </article>
-      <nav>
-        <NextPreviousNavList>
-          <li>
-            {previous && (
-              <Link to={previous.fields.slug} rel="prev">
-                ← {previous.frontmatter.title}
-              </Link>
-            )}
-          </li>
-          <li>
-            {next && (
-              <Link to={next.fields.slug} rel="next">
-                {next.frontmatter.title} →
-              </Link>
-            )}
-          </li>
-        </NextPreviousNavList>
-      </nav>
+      <PreviousNextNavigation previous={previous} next={next} />
     </Layout>
   )
 }
 
 export default BlogTemplate
 
-export const pageQuery = graphql`
-  query BlogPostBySlug($slug: String!) {
-    site {
-      siteMetadata {
-        title
-      }
-    }
-    markdownRemark(fields: { slug: { eq: $slug } }) {
-      id
-      excerpt(pruneLength: 160)
-      html
-      frontmatter {
-        title
-        date(formatString: "MMMM DD, YYYY")
-        description
-        coordinates
-      }
-    }
-  }
-`
+export const pageQuery = graphQlQueries.BlogPostBySlug
