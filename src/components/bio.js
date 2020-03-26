@@ -12,7 +12,7 @@ const Container = styled.div`
 
 const BioImage = styled(Image)`
   margin-right: ${rhythm(1 / 2)};
-  marginBottom: 0;
+  margin-bottom: 0;
 `
 
 const Bio = () => {
