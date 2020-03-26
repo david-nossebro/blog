@@ -3,7 +3,19 @@ import PropTypes from "prop-types"
 import Helmet from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 
-const SEO = ({ description, lang, meta, title }) => {
+interface SEOProps {
+  title: string
+  description: string
+  lang: string
+  meta: Array<Meta>
+}
+
+interface Meta {
+  name: string
+  content: string
+}
+
+const SEO = ({ description, lang, meta, title }: SEOProps): JSX.Element => {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -20,7 +32,7 @@ const SEO = ({ description, lang, meta, title }) => {
     `
   )
 
-  const metaDescription = description || site.siteMetadata.description
+  const metaDescription: string = description || site.siteMetadata.description
 
   return (
     <Helmet

@@ -28,7 +28,12 @@ const Footer = styled.footer`
   font-size: 0.8em;
 `
 
-const Layout = ({ title, children }) => {
+interface LayoutProps {
+  title: string
+  children: Array<JSX.Element>
+}
+
+const Layout = ({ title, children }: LayoutProps): JSX.Element => {
   return (
     <Container>
       <header>

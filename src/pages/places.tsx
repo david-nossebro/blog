@@ -3,7 +3,7 @@ import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm } from "../utils/typography"
-import PlacesMap from "../components/places-map"
+import PlacesMap, { MarkerPoint } from "../components/places-map"
 import styled from "styled-components"
 
 const MarkerPopupTitle = styled.h3`
@@ -19,9 +19,9 @@ const BottomDivider = styled.hr`
   margin-bottom: ${rhythm(1)};
 `
 
-const Places = ({ data }) => {
-  const siteTitle = data.site.siteMetadata.title
-  const markers = createMarkers(data)
+const Places = ({ data }): JSX.Element => {
+  const siteTitle: string = data.site.siteMetadata.title
+  const markers: Array<MarkerPoint> = createMarkers(data)
 
   return (
     <Layout title={siteTitle}>
@@ -34,7 +34,7 @@ const Places = ({ data }) => {
 
 export default Places
 
-const createMarkers = data => {
+const createMarkers = (data): Array<MarkerPoint> => {
   const markers = []
   data.allMarkdownRemark.edges.forEach(edge => {
     const plotContent = createPlotContent(edge.node)
@@ -47,7 +47,7 @@ const createMarkers = data => {
   return markers
 }
 
-const createPlotContent = node => {
+const createPlotContent = (node): JSX.Element => {
   return (
     <div>
       <MarkerPopupTitle>

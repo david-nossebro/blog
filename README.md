@@ -21,6 +21,9 @@ TODO
 []  Refactor to use typescript
 []  Add linting rules
     [] For code
+        [X]  Add tooling
+        []  Read up on React + Typescript
+        []  Refactor codebase
     [X] For style
 []  Plot blog entries to map
     [X]  Add OpenStreetMap to new "Tracks" map
@@ -79,6 +82,9 @@ walkidiotwalk.com
 
 
 LINKS:
+
+https://github.com/gatsbyjs/gatsby/issues/18983 -> Native TS support in Gatsby
+https://github.com/styled-components/awesome-styled-components
 
 https://analytics.google.com
 

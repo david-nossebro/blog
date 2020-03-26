@@ -4,7 +4,13 @@ import FullscreenControl from "react-leaflet-fullscreen"
 import "react-leaflet-fullscreen/dist/styles.css"
 import styled from "styled-components"
 
-const BlogMap = ({ position, width, height }) => {
+export interface BlogMapProps {
+  position: Array<number>
+  width: string
+  height: string
+}
+
+const BlogMap = ({ position, width, height }: BlogMapProps): JSX.Element => {
   const BlogMap = styled(Map)`
     width: ${width};
     height: ${height};

@@ -14,33 +14,55 @@ const BlogTitleLink = styled(Link)`
   box-shadow: none;
 `
 
-const BlogIndex = ({ data }) => {
-  const siteTitle = data.site.siteMetadata.title
-  const posts = data.allMarkdownRemark.edges
+interface Node {
+  node: Post
+}
+
+interface Post {
+  frontmatter: Frontmatter
+  fields: Fields
+  excerpt: string
+}
+
+interface Frontmatter {
+  title: string
+  date: Date
+  description: string
+}
+
+interface Fields {
+  slug: string
+}
+
+const BlogIndex = ({ data }): JSX.Element => {
+  const siteTitle: string = data.site.siteMetadata.title
+  const posts: Array<Node> = data.allMarkdownRemark.edges
 
   return (
     <Layout title={siteTitle}>
       <SEO title="All posts" />
-      {posts.map(({ node }) => {
-        const title = node.frontmatter.title || node.fields.slug
-        return (
-          <article key={node.fields.slug}>
-            <header>
-              <BlogTitle>
-                <BlogTitleLink to={node.fields.slug}>{title}</BlogTitleLink>
-              </BlogTitle>
-              <small>{node.frontmatter.date}</small>
-            </header>
-            <section>
-              <p
-                dangerouslySetInnerHTML={{
-                  __html: node.frontmatter.description || node.excerpt,
-                }}
-              />
-            </section>
-          </article>
-        )
-      })}
+      <>
+        {posts.map(({ node }: Node) => {
+          const title: string = node.frontmatter.title || node.fields.slug
+          return (
+            <article key={node.fields.slug}>
+              <header>
+                <BlogTitle>
+                  <BlogTitleLink to={node.fields.slug}>{title}</BlogTitleLink>
+                </BlogTitle>
+                <small>{node.frontmatter.date}</small>
+              </header>
+              <section>
+                <p
+                  dangerouslySetInnerHTML={{
+                    __html: node.frontmatter.description || node.excerpt,
+                  }}
+                />
+              </section>
+            </article>
+          )
+        })}
+      </>
     </Layout>
   )
 }

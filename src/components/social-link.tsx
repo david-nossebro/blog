@@ -38,8 +38,13 @@ const IconLink = styled.a`
   box-shadow: none;
 `
 
-const SocialLink = ({ type, href }) => {
-  let socialIcon
+interface SocialLinkProps {
+  type: string
+  href: string
+}
+
+const SocialLink = ({ type, href }: SocialLinkProps): JSX.Element => {
+  let socialIcon: JSX.Element
   switch (type) {
     case "instagram":
       socialIcon = <InstagramIcon color="#E4405F" />

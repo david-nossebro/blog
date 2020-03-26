@@ -4,7 +4,19 @@ import FullscreenControl from "react-leaflet-fullscreen"
 import "react-leaflet-fullscreen/dist/styles.css"
 import styled from "styled-components"
 
-const PlacesMap = ({ markers, width, height }) => {
+interface PlacesMapProps {
+  markers: Array<MarkerPoint>
+  width: string
+  height: string
+}
+
+export interface MarkerPoint {
+  position: Array<number>
+  title: string
+  content: JSX.Element
+}
+
+const PlacesMap = ({ markers, width, height }: PlacesMapProps): JSX.Element => {
   const PlacesMap = styled(Map)`
     width: ${width};
     height: ${height};
@@ -31,7 +43,7 @@ const PlacesMap = ({ markers, width, height }) => {
           {markers &&
             markers.map(m => (
               <Marker
-                key={m.position + m.content}
+                key={m.position.toString() + m.content}
                 position={m.position}
                 title={m.title}
                 riseOnHover="true"
@@ -49,6 +61,6 @@ const PlacesMap = ({ markers, width, height }) => {
 
 export default PlacesMap
 
-const getBounds = markers => {
+const getBounds = (markers: Array<Marker>): Array<Array<number>> => {
   return markers.map(m => m.position)
 }

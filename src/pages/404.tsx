@@ -4,7 +4,7 @@ import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-const NotFoundPage = ({ data }) => {
+const NotFoundPage = ({ data }): JSX.Element => {
   const siteTitle = data.site.siteMetadata.title
 
   return (

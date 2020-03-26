@@ -29,14 +29,14 @@ const NextPreviousNavList = styled.ul`
   padding: 0;
 `
 
-const BlogTemplate = ({ data, pageContext }) => {
+const BlogTemplate = ({ data, pageContext }): JSX.Element => {
   const { previous, next } = pageContext
-  const siteTitle = data.site.siteMetadata.title
-  const title = data.markdownRemark.frontmatter.title
-  const description = data.markdownRemark.frontmatter.description
-  const date = data.markdownRemark.frontmatter.date
-  const coordinates = data.markdownRemark.frontmatter.coordinates
-  const html = data.markdownRemark.html
+  const siteTitle: string = data.site.siteMetadata.title
+  const title: string = data.markdownRemark.frontmatter.title
+  const description: string = data.markdownRemark.frontmatter.description
+  const date: Date = data.markdownRemark.frontmatter.date
+  const coordinates: Array<number> = data.markdownRemark.frontmatter.coordinates
+  const html: string = data.markdownRemark.html
 
   return (
     <Layout title={siteTitle}>

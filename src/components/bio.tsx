@@ -15,7 +15,16 @@ const BioImage = styled(Image)`
   margin-bottom: 0;
 `
 
-const Bio = () => {
+interface Author {
+  name: string
+  summary: string
+}
+
+interface Social {
+  instagram: string
+}
+
+const Bio = (): JSX.Element => {
   const data = useStaticQuery(graphql`
     query BioQuery {
       avatar: file(absolutePath: { regex: "/jag2.jpg/" }) {
@@ -38,7 +47,8 @@ const Bio = () => {
       }
     }
   `)
-  const { author, social } = data.site.siteMetadata
+  const { author }: { author: Author } = data.site.siteMetadata
+  const { social }: { social: Social } = data.site.siteMetadata
 
   return (
     <Container>

@@ -11,13 +11,17 @@ const SuccessFormMessage = styled.span`
   margin-left: 0.5em;
 `
 
-const Contact = ({ data }) => {
-  const siteTitle = data.site.siteMetadata.title
+const BottomDivider = styled.hr`
+  margin-bottom: ${rhythm(1)};
+`
 
-  let succesfulForm
+const Contact = ({ data }): JSX.Element => {
+  const siteTitle: string = data.site.siteMetadata.title
+
+  let succesfulForm: boolean
   if (typeof window !== `undefined`) {
     const urlParams = new URLSearchParams(window.location.search)
-    succesfulForm = urlParams.get("submit-form") || false
+    succesfulForm = urlParams.get("form-success") === "true" || false
   } else {
     succesfulForm = false
   }
@@ -48,7 +52,7 @@ const Contact = ({ data }) => {
           name="contact"
           data-netlify="true"
           data-netlify-honeypot="bot-field"
-          action="/contact?submit-form=success"
+          action="/contact?form-success=true"
         >
           <input type="hidden" name="form-name" value="contact" />
           <p>
@@ -63,7 +67,7 @@ const Contact = ({ data }) => {
           </p>
           <p>
             <label>
-              Message <textarea rows="5" cols="60" name="message" />
+              Message <textarea rows={5} cols={60} name="message" />
             </label>
           </p>
           <p>
@@ -76,11 +80,7 @@ const Contact = ({ data }) => {
           </p>
         </form>
       </article>
-      <hr
-        style={{
-          marginBottom: rhythm(1),
-        }}
-      />
+      <BottomDivider />
     </Layout>
   )
 }

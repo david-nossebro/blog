@@ -9,11 +9,11 @@ const BottomDivider = styled.hr`
   margin-bottom: ${rhythm(1)};
 `
 
-const MarkdownPage = ({ data }) => {
-  const siteTitle = data.site.siteMetadata.title
-  const title = data.markdownRemark.frontmatter.title
-  const description = data.markdownRemark.frontmatter.description
-  const html = data.markdownRemark.html
+const MarkdownPage = ({ data }): JSX.Element => {
+  const siteTitle: string = data.site.siteMetadata.title
+  const title: string = data.markdownRemark.frontmatter.title
+  const description: string = data.markdownRemark.frontmatter.description
+  const html: string = data.markdownRemark.html
 
   return (
     <Layout title={siteTitle}>

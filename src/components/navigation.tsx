@@ -19,7 +19,7 @@ const NavLink = styled(Link)`
   box-shadow: none;
 `
 
-const Navigation = () => {
+const Navigation = (): JSX.Element => {
   return (
     <List>
       <ListItem>
