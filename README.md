@@ -16,14 +16,16 @@ TODO
 []  TEST - Add way to generate 1000 entries and see how the site behaves
 [X]  Refactor CSS to styled-components
 [X]  Create component for "SocialLinks" on contact page
-[]  Create component for form on contact page
+[X]  Create component for form on contact page
 []  Create component for Previous/Next navigation in blog-template
 []  Refactor to use typescript
-[]  Add linting rules
-    [] For code
-        [X]  Add tooling
-        []  Read up on React + Typescript
-        []  Refactor codebase
+    [X]  Add tooling
+    [X]  Refactor codebase
+    []  Add types for graphql result
+    []  Structure types
+[]  Structure styled-components so its possible to share common components
+[X]  Add linting rules
+    [X] For code
     [X] For style
 []  Plot blog entries to map
     [X]  Add OpenStreetMap to new "Tracks" map
