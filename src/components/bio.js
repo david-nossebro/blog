@@ -39,7 +39,7 @@ const Bio = () => {
     }
   `)
   const { author, social } = data.site.siteMetadata
-  
+
   return (
     <Container>
       {/* Could not get rid of the styling in here for some reason. The gatsby image tag is weird... */}
@@ -47,7 +47,7 @@ const Bio = () => {
         fixed={data.avatar.childImageSharp.fixed}
         alt={author.name}
         style={{
-          minWidth: 50
+          minWidth: 50,
         }}
         imgStyle={{
           borderRadius: `50%`,
@@ -57,10 +57,7 @@ const Bio = () => {
         Created by <strong>{author.name}</strong> {author.summary}
         {` `}
         You should follow him on {` `}
-        <a href={`https://instagram.com/${social.instagram}`}>
-          Instagram
-        </a>
-        .
+        <a href={`https://instagram.com/${social.instagram}`}>Instagram</a>.
       </p>
     </Container>
   )

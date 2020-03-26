@@ -20,10 +20,9 @@ const BottomDivider = styled.hr`
 `
 
 const Places = ({ data }) => {
-
   const siteTitle = data.site.siteMetadata.title
-  const markers = createMarkers(data);
- 
+  const markers = createMarkers(data)
+
   return (
     <Layout title={siteTitle}>
       <SEO title="Places" />
@@ -35,20 +34,20 @@ const Places = ({ data }) => {
 
 export default Places
 
-const createMarkers = (data) => {
+const createMarkers = data => {
   const markers = []
   data.allMarkdownRemark.edges.forEach(edge => {
-    const plotContent = createPlotContent(edge.node);
+    const plotContent = createPlotContent(edge.node)
     markers.push({
       position: edge.node.frontmatter.coordinates,
       title: edge.node.frontmatter.title,
-      content: plotContent
+      content: plotContent,
     })
   })
-  return markers;
+  return markers
 }
 
-const createPlotContent = (node) => {
+const createPlotContent = node => {
   return (
     <div>
       <MarkerPopupTitle>
@@ -70,12 +69,12 @@ export const pageQuery = graphql`
       }
     }
     allMarkdownRemark(
-      filter: { 
-        fields: {collection: {eq: "blog"}},
-        frontmatter:  {coordinates: {ne: null}},
+      filter: {
+        fields: { collection: { eq: "blog" } }
+        frontmatter: { coordinates: { ne: null } }
       }
-      sort: { fields: [frontmatter___date], order: DESC }) 
-    {
+      sort: { fields: [frontmatter___date], order: DESC }
+    ) {
       edges {
         node {
           excerpt

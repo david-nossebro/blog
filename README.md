@@ -21,7 +21,7 @@ TODO
 []  Refactor to use typescript
 []  Add linting rules
     [] For code
-    [] For style
+    [X] For style
 []  Plot blog entries to map
     [X]  Add OpenStreetMap to new "Tracks" map
     [X]  Plot blog entries with location to map

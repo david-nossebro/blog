@@ -10,18 +10,14 @@ const BottomDivider = styled.hr`
 `
 
 const MarkdownPage = ({ data }) => {
-
-  const siteTitle = data.site.siteMetadata.title;
-  const title = data.markdownRemark.frontmatter.title;
-  const description = data.markdownRemark.frontmatter.description;
-  const html = data.markdownRemark.html;
+  const siteTitle = data.site.siteMetadata.title
+  const title = data.markdownRemark.frontmatter.title
+  const description = data.markdownRemark.frontmatter.description
+  const html = data.markdownRemark.html
 
   return (
     <Layout title={siteTitle}>
-      <SEO
-        title={title}
-        description={description}
-      />
+      <SEO title={title} description={description} />
       <article>
         <section dangerouslySetInnerHTML={{ __html: html }} />
         <BottomDivider />

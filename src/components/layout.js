@@ -30,21 +30,19 @@ const Footer = styled.footer`
 `
 
 const Layout = ({ title, children }) => {
-
   return (
     <Container>
       <header>
         <SiteTitle>
-          <SiteTitleLink to={`/`}>
-            {title}
-          </SiteTitleLink>
+          <SiteTitleLink to={`/`}>{title}</SiteTitleLink>
         </SiteTitle>
       </header>
       <Bio />
       <Navigation />
-        <main>{children}</main>
+      <main>{children}</main>
       <Footer>
-        © {new Date().getFullYear()}, Built with blood, sweat and tears (and some
+        © {new Date().getFullYear()}, Built with blood, sweat and tears (and
+        some
         {` `}
         <Link to="/tools">tools</Link>)
       </Footer>

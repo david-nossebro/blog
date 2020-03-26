@@ -1,11 +1,16 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 const path = require(`path`)
-const { siteMetadata } = require(`../gatsby-config`)
 
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
 
   createBlogPosts(graphql, createPage)
-  createMarkdownPages("about", "./src/templates/markdown-page-template.js", graphql, createPage)
+  createMarkdownPages(
+    "about",
+    "./src/templates/markdown-page-template.js",
+    graphql,
+    createPage
+  )
 }
 
 const createBlogPosts = async (graphql, createPage) => {

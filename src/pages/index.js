@@ -27,9 +27,7 @@ const BlogIndex = ({ data }) => {
           <article key={node.fields.slug}>
             <header>
               <BlogTitle>
-                <BlogTitleLink to={node.fields.slug}>
-                  {title}
-                </BlogTitleLink>
+                <BlogTitleLink to={node.fields.slug}>{title}</BlogTitleLink>
               </BlogTitle>
               <small>{node.frontmatter.date}</small>
             </header>
@@ -57,9 +55,9 @@ export const pageQuery = graphql`
       }
     }
     allMarkdownRemark(
-      filter: { fields: {collection: {eq: "blog"}}}
-      sort: { fields: [frontmatter___date], order: DESC }) 
-    {
+      filter: { fields: { collection: { eq: "blog" } } }
+      sort: { fields: [frontmatter___date], order: DESC }
+    ) {
       edges {
         node {
           excerpt

@@ -1,6 +1,4 @@
-
 module.exports = {
-
   siteMetadata: {
     title: `Blog`,
     author: {
@@ -47,7 +45,7 @@ module.exports = {
       options: {
         plugins: [
           // This plugin makes netlify cms work with relative images.
-          'gatsby-remark-relative-images',
+          "gatsby-remark-relative-images",
           {
             resolve: `gatsby-remark-images`,
             options: {
@@ -68,10 +66,10 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
-      resolve: 'gatsby-plugin-react-leaflet',
+      resolve: "gatsby-plugin-react-leaflet",
       options: {
-        linkStyles: true // (default: true) Enable/disable loading stylesheets via CDN
-      }
+        linkStyles: true, // (default: true) Enable/disable loading stylesheets via CDN
+      },
     },
     {
       resolve: `gatsby-plugin-google-analytics`,
@@ -86,9 +84,13 @@ module.exports = {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `Gatsby Starter Blog`,
+        // eslint-disable-next-line @typescript-eslint/camelcase
         short_name: `GatsbyJS`,
+        // eslint-disable-next-line @typescript-eslint/camelcase
         start_url: `/`,
+        // eslint-disable-next-line @typescript-eslint/camelcase
         background_color: `#ffffff`,
+        // eslint-disable-next-line @typescript-eslint/camelcase
         theme_color: `#663399`,
         display: `minimal-ui`,
         icon: `content/assets/gatsby-icon.png`,
@@ -101,8 +103,9 @@ module.exports = {
         pathToConfigModule: `src/utils/typography`,
       },
     },
+    `gatsby-plugin-typescript`,
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-netlify-cms`,
-    'gatsby-plugin-netlify',
+    "gatsby-plugin-netlify",
   ],
 }

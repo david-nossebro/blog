@@ -30,36 +30,28 @@ const NextPreviousNavList = styled.ul`
 `
 
 const BlogTemplate = ({ data, pageContext }) => {
-
   const { previous, next } = pageContext
-  const siteTitle = data.site.siteMetadata.title;
-  const title = data.markdownRemark.frontmatter.title;
-  const description = data.markdownRemark.frontmatter.description;
-  const date = data.markdownRemark.frontmatter.date;
-  const coordinates = data.markdownRemark.frontmatter.coordinates;
-  const html = data.markdownRemark.html;
+  const siteTitle = data.site.siteMetadata.title
+  const title = data.markdownRemark.frontmatter.title
+  const description = data.markdownRemark.frontmatter.description
+  const date = data.markdownRemark.frontmatter.date
+  const coordinates = data.markdownRemark.frontmatter.coordinates
+  const html = data.markdownRemark.html
 
   return (
     <Layout title={siteTitle}>
-      <SEO
-        title={title}
-        description={description}
-      />
+      <SEO title={title} description={description} />
       <article>
         <header>
-          <BlogTitle>
-            {title}
-          </BlogTitle>
-          <BlogDate>
-            {date}
-          </BlogDate>
+          <BlogTitle>{title}</BlogTitle>
+          <BlogDate>{date}</BlogDate>
         </header>
         <section dangerouslySetInnerHTML={{ __html: html }} />
-        { coordinates &&
+        {coordinates && (
           <BlogMap height="350px" width="100%" position={coordinates} />
-        }
+        )}
         <BottomDivider />
-        <footer /> 
+        <footer />
       </article>
       <nav>
         <NextPreviousNavList>

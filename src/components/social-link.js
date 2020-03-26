@@ -1,10 +1,16 @@
 import React from "react"
-import { Facebook, Instagram, Youtube, Slack, Gmail } from "@icons-pack/react-simple-icons"
+import {
+  Facebook,
+  Instagram,
+  Youtube,
+  Slack,
+  Gmail,
+} from "@icons-pack/react-simple-icons"
 import styled from "styled-components"
-import {css} from "styled-components"
+import { css } from "styled-components"
 const iconStyle = css`
   width: 3em;
-  height: 3em; 
+  height: 3em;
   margin-right: 1em;
 `
 
@@ -32,10 +38,9 @@ const IconLink = styled.a`
   box-shadow: none;
 `
 
-const SocialLink = ({type, href}) => {
-
-  let socialIcon;
-  switch(type) {
+const SocialLink = ({ type, href }) => {
+  let socialIcon
+  switch (type) {
     case "instagram":
       socialIcon = <InstagramIcon color="#E4405F" />
       break
@@ -48,14 +53,14 @@ const SocialLink = ({type, href}) => {
     case "slack":
       socialIcon = <SlackIcon color="#4A154B" />
       break
-    case "mail": 
+    case "mail":
       socialIcon = <GmailIcon color="#D14836" />
       break
     default:
       socialIcon = <GmailIcon color="#D14836" />
   }
 
-  return(
+  return (
     <IconLink href={href} target="_blank" rel="noopener noreferrer">
       {socialIcon}
     </IconLink>

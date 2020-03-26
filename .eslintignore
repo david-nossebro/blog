@@ -1,0 +1,14 @@
+### Config files
+# These aren't always linted by default, but they should be.
+!.eslintrc.js
+
+### Generated files
+# Please don't make me fix these.
+
+## Dependencies
+node_modules/
+
+## Gatsby
+.cache/
+@types/
+public/
