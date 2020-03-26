@@ -1,7 +1,6 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
-const { createFilePath } = require(`gatsby-source-filesystem`)
+import gatsbySourceFileSystem from "gatsby-source-filesystem"
 
-exports.onCreateNode = ({ node, actions, getNode }) => {
+const onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions
 
   if (node.internal.type === `MarkdownRemark`) {
@@ -19,7 +18,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       value: collection,
     })
 
-    const value = createFilePath({ node, getNode })
+    const value = gatsbySourceFileSystem.createFilePath({ node, getNode })
     createNodeField({
       name: `slug`,
       node,
@@ -27,3 +26,5 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
     })
   }
 }
+
+export default onCreateNode

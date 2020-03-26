@@ -1,9 +1,8 @@
 import React from "react"
 import { Link } from "gatsby"
-
 import { rhythm, scale } from "../utils/typography"
-import Navigation from "../components/navigation"
-import Bio from "../components/bio"
+import Navigation from "./navigation"
+import Bio from "./bio"
 import styled from "styled-components"
 
 const Container = styled.div`

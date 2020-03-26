@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 const path = require(`path`)
 
-exports.createPages = async ({ graphql, actions }) => {
+const createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
 
   createBlogPosts(graphql, createPage)
@@ -12,6 +12,8 @@ exports.createPages = async ({ graphql, actions }) => {
     createPage
   )
 }
+
+export default createPages
 
 const createBlogPosts = async (graphql, createPage) => {
   const blogResult = await getAllMarkdownPagesFromCollection("blog", graphql)
