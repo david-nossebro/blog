@@ -7,7 +7,7 @@ exports.createPages = async ({ graphql, actions }) => {
   createBlogPosts(graphql, createPage)
   createMarkdownPages(
     "about",
-    "./src/templates/markdown-page-template.js",
+    "./src/templates/markdown-page-template.tsx",
     graphql,
     createPage
   )
@@ -24,7 +24,7 @@ const createBlogPosts = async (graphql, createPage) => {
 
     createPage({
       path: post.node.fields.slug,
-      component: path.resolve(`./src/templates/blog-template.js`),
+      component: path.resolve(`./src/templates/blog-template.tsx`),
       context: {
         slug: post.node.fields.slug,
         previous,
