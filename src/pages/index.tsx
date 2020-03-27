@@ -2,7 +2,7 @@ import React from "react"
 import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { rhythm } from "../utils/typography"
+import { rhythm, scale } from "../utils/typography"
 import styled from "styled-components"
 import { BottomDivider } from "../style/components.style"
 
@@ -20,8 +20,7 @@ const BlogTitleLink = styled(Link)`
 `
 
 const Date = styled.small`
-  font-weight: 100;
-  color: grey;
+  ${scale(-1 / 5)};
 `
 
 interface Node {

@@ -8,16 +8,17 @@ import PreviousNextNavigation from "../components/previous-next-navigation"
 import styled from "styled-components"
 import { BottomDivider } from "../style/components.style"
 
-const BlogTitle = styled.h1`
+const BlogTitle = styled.h2`
   margin-top: ${rhythm(1)};
   margin-bottom: 0;
 `
 
-const BlogDate = styled.p({
-  ...scale(-1 / 5),
-  display: `block`,
-  marginBottom: rhythm(1),
-})
+const BlogDate = styled.p`
+  ${scale(-1 / 5)};
+
+  display: block;
+  margin-bottom: ${rhythm(1)};
+`
 
 const BlogTemplate = ({ data, pageContext }): JSX.Element => {
   const { previous, next } = pageContext

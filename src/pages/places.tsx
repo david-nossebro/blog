@@ -17,15 +17,13 @@ const MarkerPopupTitleLink = styled(Link)`
 `
 
 const Date = styled.small`
-  font-weight: 100;
-  color: grey;
+  ${scale(-1 / 5)};
   font-family: ${typography.toJSON().body.fontFamily};
-  font-size: 13px;
 `
 
 const Content = styled.p`
   font-family: ${typography.toJSON().body.fontFamily};
-  font-size: 14px;
+  ${scale(-1 / 16)};
 `
 
 const Places = ({ data }): JSX.Element => {

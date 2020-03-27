@@ -26,7 +26,7 @@ TODO
     [X]  Refactor codebase
     []  Add types for graphql result
     []  Structure types
-[]  Structure styled-components so its possible to share common components
+[X]  Structure styled-components so its possible to share common components
 [X]  Add linting rules
     [X] For code
     [X] For style
@@ -106,3 +106,20 @@ https://hiking.waymarkedtrails.org
 https://github.com/automata/awesome-jamstack
 
 https://github.com/Vagr9K/gatsby-advanced-starter
+
+Lantmäteriet med leaflet
+https://github.com/kontrollanten/lantmateriet-leaflet
+https://github.com/fredriklindmark/lantmateriet_wmts
+
+vildmarkskartan.se - Bra domän. Idéen är en karta där vem som helst kan lägga in tips platser för friluftsliv. 
+
+https://www.gatsbyjs.org/packages/gatsby-remark-numbered-footnotes
+https://www.gatsbyjs.org/packages/gatsby-remark-reading-time
+https://www.gatsbyjs.org/packages/gatsby-remark-lazy-load
+https://www.gatsbyjs.org/packages/gatsby-remark-responsive-image
+https://www.gatsbyjs.org/packages/gatsby-remark-embed-spotify
+
+https://gatsby-starter-bee.netlify.com/
+https://www.gatsbyjs.org/starters/passwd10/gatsby-starter-answer/
+
+https://github.com/jackbravo/gatsby-starter-i18n-blog
