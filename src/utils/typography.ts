@@ -6,11 +6,13 @@ Wordpress2016.overrideThemeStyles = () => {
     "a.gatsby-resp-image-link": {
       boxShadow: `none`,
     },
+    ".leaflet-container a.leaflet-popup-close-button": {
+      boxShadow: `none`,
+    }
   }
 }
 
 delete Wordpress2016.googleFonts
-
 const typography = new Typography(Wordpress2016)
 
 // Hot reload typography in development.

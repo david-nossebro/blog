@@ -6,13 +6,22 @@ import { rhythm } from "../utils/typography"
 import styled from "styled-components"
 import { BottomDivider } from "../style/components.style"
 
+const HeaderSection = styled.header`
+  margin-bottom: ${rhythm(1 / 4)};
+`
+
 const BlogTitle = styled.h3`
   margin-top: 0;
-  margin-bottom: ${rhythm(1 / 4)};
+  margin-bottom: 0;
 `
 
 const BlogTitleLink = styled(Link)`
   box-shadow: none;
+`
+
+const Date = styled.small`
+  font-weight: 100;
+  color: grey;
 `
 
 interface Node {
@@ -47,12 +56,12 @@ const BlogIndex = ({ data }): JSX.Element => {
           const title: string = node.frontmatter.title || node.fields.slug
           return (
             <article key={node.fields.slug}>
-              <header>
+              <HeaderSection>
                 <BlogTitle>
                   <BlogTitleLink to={node.fields.slug}>{title}</BlogTitleLink>
                 </BlogTitle>
-                <small>{node.frontmatter.date}</small>
-              </header>
+                <Date>{node.frontmatter.date}</Date>
+              </HeaderSection>
               <section>
                 <p
                   dangerouslySetInnerHTML={{

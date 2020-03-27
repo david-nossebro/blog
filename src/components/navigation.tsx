@@ -12,27 +12,38 @@ const List = styled.ul`
 
 const ListItem = styled.li`
   display: inline;
-  padding: 0.5em;
+  padding-right: 0.7em;
+
+  .active {
+    box-shadow: 0 1px 0 0 currentColor;
+  }
 `
 
 const NavLink = styled(Link)`
   box-shadow: none;
+
+  :hover {
+    box-shadow: 0 1px 0 0 currentColor;
+  }
 `
 
 const Navigation = (): JSX.Element => {
+
+
+
   return (
     <List>
       <ListItem>
         <NavLink to="/">Blog</NavLink>
       </ListItem>
       <ListItem>
-        <NavLink to="/places">Places</NavLink>
+        <NavLink to="/places" activeClassName="active">Places</NavLink>
       </ListItem>
       <ListItem>
-        <NavLink to="/about">About</NavLink>
+        <NavLink to="/about" activeClassName="active">About</NavLink>
       </ListItem>
       <ListItem>
-        <NavLink to="/contact">Contact</NavLink>
+        <NavLink to="/contact" activeClassName="active">Contact</NavLink>
       </ListItem>
     </List>
   )

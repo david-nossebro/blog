@@ -2,7 +2,7 @@ import React from "react"
 import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { rhythm } from "../utils/typography"
+import typography, { rhythm, scale } from "../utils/typography"
 import PlacesMap, { MarkerPoint } from "../components/places-map"
 import styled from "styled-components"
 import { BottomDivider } from "../style/components.style"
@@ -14,6 +14,18 @@ const MarkerPopupTitle = styled.h3`
 
 const MarkerPopupTitleLink = styled(Link)`
   box-shadow: none;
+`
+
+const Date = styled.small`
+  font-weight: 100;
+  color: grey;
+  font-family: ${typography.toJSON().body.fontFamily};
+  font-size: 13px;
+`
+
+const Content = styled.p`
+  font-family: ${typography.toJSON().body.fontFamily};
+  font-size: 14px;
 `
 
 const Places = ({ data }): JSX.Element => {
@@ -52,8 +64,8 @@ const createPlotContent = (node): JSX.Element => {
           {node.frontmatter.title}
         </MarkerPopupTitleLink>
       </MarkerPopupTitle>
-      <small>{node.frontmatter.date}</small>
-      <p>{node.frontmatter.description || node.excerpt}</p>
+      <Date>{node.frontmatter.date}</Date>
+      <Content>{node.frontmatter.description || node.excerpt}</Content>
     </div>
   )
 }
