@@ -4,6 +4,11 @@ import FullscreenControl from "react-leaflet-fullscreen"
 import "react-leaflet-fullscreen/dist/styles.css"
 import styled from "styled-components"
 
+const StyledMap = styled(Map)`
+  width: ${props => props.width};
+  height: ${props => props.height};
+`
+
 export interface BlogMapProps {
   position: Array<number>
   width: string
@@ -11,15 +16,11 @@ export interface BlogMapProps {
 }
 
 const BlogMap = ({ position, width, height }: BlogMapProps): JSX.Element => {
-  const BlogMap = styled(Map)`
-    width: ${width};
-    height: ${height};
-  `
 
   // Can not render map server side
   if (typeof window !== "undefined") {
     return (
-      <BlogMap center={position} zoom={13}>
+      <StyledMap width={width} height={height} center={position} zoom={13}>
         <TileLayer url="https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png" />
         <FullscreenControl
           position="topright"
@@ -27,7 +28,7 @@ const BlogMap = ({ position, width, height }: BlogMapProps): JSX.Element => {
           title="Fullscreen"
         />
         <Marker position={position} />
-      </BlogMap>
+      </StyledMap>
     )
   } else {
     return null

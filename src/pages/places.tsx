@@ -5,6 +5,7 @@ import SEO from "../components/seo"
 import { rhythm } from "../utils/typography"
 import PlacesMap, { MarkerPoint } from "../components/places-map"
 import styled from "styled-components"
+import { BottomDivider } from "../style/components.style"
 
 const MarkerPopupTitle = styled.h3`
   margin-top: 0;
@@ -13,10 +14,6 @@ const MarkerPopupTitle = styled.h3`
 
 const MarkerPopupTitleLink = styled(Link)`
   box-shadow: none;
-`
-
-const BottomDivider = styled.hr`
-  margin-bottom: ${rhythm(1)};
 `
 
 const Places = ({ data }): JSX.Element => {

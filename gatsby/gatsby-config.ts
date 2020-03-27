@@ -1,6 +1,6 @@
 export default {
   siteMetadata: {
-    title: `Blog`,
+    title: `Walk Idiot Walk`,
     author: {
       name: `David Berg`,
       summary: `who lives in Sweden and loves outdoor adventures.`,

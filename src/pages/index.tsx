@@ -4,6 +4,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm } from "../utils/typography"
 import styled from "styled-components"
+import { BottomDivider } from "../style/components.style"
 
 const BlogTitle = styled.h3`
   margin-top: 0;
@@ -63,6 +64,7 @@ const BlogIndex = ({ data }): JSX.Element => {
           )
         })}
       </>
+      <BottomDivider />
     </Layout>
   )
 }

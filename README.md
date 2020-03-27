@@ -41,8 +41,9 @@ TODO
     []  Add support for plotting routes on blog-map
     []  Add support for multiple plot types on blog-map (e.g. Camp, View, Bath etc, idea is to have something pretty generic)
     []  If two plots are close to each other, they can be merged under the same plot
+[]  Add popup viewer when clicking images (currently opened in new tab)
 []  Add tags to blog entries, use in SEO
-[]  Add different styles for different kind of blog entrie
+[]  Add different styles for different kind of blog entries
     []  Adventure
     []  Gear review
     []  Recipe

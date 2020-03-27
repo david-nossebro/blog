@@ -5,7 +5,7 @@ import styled from "styled-components"
 
 import { rhythm } from "../utils/typography"
 
-const Container = styled.div`
+const Wrapper = styled.div`
   display: flex;
   margin-bottom: ${rhythm(1 / 4)};
 `
@@ -51,7 +51,7 @@ const Bio = (): JSX.Element => {
   const { social }: { social: Social } = data.site.siteMetadata
 
   return (
-    <Container>
+    <Wrapper>
       {/* Could not get rid of the styling in here for some reason. The gatsby image tag is weird... */}
       <BioImage
         fixed={data.avatar.childImageSharp.fixed}
@@ -69,7 +69,7 @@ const Bio = (): JSX.Element => {
         You should follow him on {` `}
         <a href={`https://instagram.com/${social.instagram}`}>Instagram</a>.
       </p>
-    </Container>
+    </Wrapper>
   )
 }
 

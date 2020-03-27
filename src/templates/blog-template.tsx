@@ -1,11 +1,12 @@
 import React from "react"
+import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm, scale } from "../utils/typography"
 import BlogMap from "../components/blog-map"
 import PreviousNextNavigation from "../components/previous-next-navigation"
 import styled from "styled-components"
-import graphQlQueries from "../utils/graphql-queries"
+import { BottomDivider } from "../style/components.style"
 
 const BlogTitle = styled.h1`
   margin-top: ${rhythm(1)};
@@ -17,10 +18,6 @@ const BlogDate = styled.p({
   display: `block`,
   marginBottom: rhythm(1),
 })
-
-const BottomDivider = styled.hr`
-  margin-bottom: ${rhythm(1)};
-`
 
 const BlogTemplate = ({ data, pageContext }): JSX.Element => {
   const { previous, next } = pageContext
@@ -53,4 +50,23 @@ const BlogTemplate = ({ data, pageContext }): JSX.Element => {
 
 export default BlogTemplate
 
-export const pageQuery = graphQlQueries.BlogPostBySlug
+export const pageQuery = graphql`
+  query BlogPostBySlug($slug: String!) {
+    site {
+      siteMetadata {
+        title
+      }
+    }
+    markdownRemark(fields: { slug: { eq: $slug } }) {
+      id
+      excerpt(pruneLength: 160)
+      html
+      frontmatter {
+        title
+        date(formatString: "MMMM DD, YYYY")
+        description
+        coordinates
+      }
+    }
+  }
+`

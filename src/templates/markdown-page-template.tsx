@@ -1,13 +1,8 @@
 import React from "react"
+import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { rhythm } from "../utils/typography"
-import styled from "styled-components"
-import graphQlQueries from "../utils/graphql-queries"
-
-const BottomDivider = styled.hr`
-  margin-bottom: ${rhythm(1)};
-`
+import { BottomDivider } from "../style/components.style"
 
 const MarkdownPage = ({ data }): JSX.Element => {
   const siteTitle: string = data.site.siteMetadata.title
@@ -29,4 +24,21 @@ const MarkdownPage = ({ data }): JSX.Element => {
 
 export default MarkdownPage
 
-export const pageQuery = graphQlQueries.MarkdownPageBySlug
+export const pageQuery = graphql`
+  query MarkdownPageBySlug($slug: String!) {
+    site {
+      siteMetadata {
+        title
+      }
+    }
+    markdownRemark(fields: { slug: { eq: $slug } }) {
+      id
+      excerpt(pruneLength: 160)
+      html
+      frontmatter {
+        title
+        description
+      }
+    }
+  }
+`

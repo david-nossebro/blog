@@ -4,6 +4,11 @@ import FullscreenControl from "react-leaflet-fullscreen"
 import "react-leaflet-fullscreen/dist/styles.css"
 import styled from "styled-components"
 
+const StyledMap = styled(Map)`
+  width: ${props => props.width};
+  height: ${props => props.height};
+`
+
 interface PlacesMapProps {
   markers: Array<MarkerPoint>
   width: string
@@ -17,17 +22,13 @@ export interface MarkerPoint {
 }
 
 const PlacesMap = ({ markers, width, height }: PlacesMapProps): JSX.Element => {
-  const PlacesMap = styled(Map)`
-    width: ${width};
-    height: ${height};
-  `
 
   // Can not render map server side
   if (typeof window !== "undefined") {
     const bounds = getBounds(markers)
 
     return (
-      <PlacesMap bounds={bounds} boundsOptions={{ padding: [50, 50] }}>
+      <StyledMap width={width} height={height} bounds={bounds} boundsOptions={{ padding: [50, 50] }}>
         <LayersControl position="topright">
           <LayersControl.BaseLayer checked name="Topographic">
             <TileLayer url="https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png" />
@@ -52,7 +53,7 @@ const PlacesMap = ({ markers, width, height }: PlacesMapProps): JSX.Element => {
               </Marker>
             ))}
         </LayersControl>
-      </PlacesMap>
+      </StyledMap>
     )
   } else {
     return null

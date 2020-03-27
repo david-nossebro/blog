@@ -4,12 +4,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import SocialLink from "../components/social-link"
 import ContactForm from "../components/contact-form"
-import { rhythm } from "../utils/typography"
-import styled from "styled-components"
-
-const BottomDivider = styled.hr`
-  margin-bottom: ${rhythm(1)};
-`
+import { BottomDivider } from "../style/components.style"
 
 const Contact = ({ data }): JSX.Element => {
   const siteTitle: string = data.site.siteMetadata.title
