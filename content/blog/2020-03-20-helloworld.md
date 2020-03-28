@@ -1,7 +1,7 @@
 ---
 title: Hello World
 date: '2015-05-01T22:12:03.284Z'
-coordinates: '{"type":"Point","coordinates":[51.500, -0.09]}'
+coordinates: '{"type":"Point","coordinates":[-0.09, 51.500]}'
 ---
 This is my first post on my new fake blog! How exciting Wooop!
 

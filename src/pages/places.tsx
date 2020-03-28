@@ -1,39 +1,18 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
+import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import typography, { rhythm, scale } from "../utils/typography"
-import PlacesMap, { MarkerPoint } from "../components/places-map"
-import styled from "styled-components"
+import PlacesMap from "../components/places-map"
 import { BottomDivider } from "../style/components.style"
-
-const MarkerPopupTitle = styled.h3`
-  margin-top: 0;
-  margin-bottom: ${rhythm(1 / 4)};
-`
-
-const MarkerPopupTitleLink = styled(Link)`
-  box-shadow: none;
-`
-
-const Date = styled.small`
-  ${scale(-1 / 5)};
-  font-family: ${typography.toJSON().body.fontFamily};
-`
-
-const Content = styled.p`
-  font-family: ${typography.toJSON().body.fontFamily};
-  ${scale(-1 / 16)};
-`
 
 const Places = ({ data }): JSX.Element => {
   const siteTitle: string = data.site.siteMetadata.title
-  const markers: Array<MarkerPoint> = createMarkers(data)
+  const geoJsonArray: Array<JSON> = createGeoJsonArray(data)
 
   return (
     <Layout title={siteTitle}>
       <SEO title="Places" />
-      <PlacesMap height="450px" width="100%" markers={markers} />
+      <PlacesMap height="450px" width="100%" geoJsonArray={geoJsonArray} />
       <BottomDivider />
     </Layout>
   )
@@ -41,30 +20,27 @@ const Places = ({ data }): JSX.Element => {
 
 export default Places
 
-const createMarkers = (data): Array<MarkerPoint> => {
-  const markers = []
+const createGeoJsonArray = (data): Array<JSON> => {
+  const geoJsonArray = []
   data.allMarkdownRemark.edges.forEach(edge => {
-    const plotContent = createPlotContent(edge.node)
-    const position = getPosition(edge.node.frontmatter.coordinates)
-    markers.push({
-      position: position,
-      title: edge.node.frontmatter.title,
-      content: plotContent,
-    })
+    const geoJson = createGeoJson(edge.node)
+    geoJsonArray.push(geoJson)
   })
-  return markers
+  return geoJsonArray
 }
 
-const getPosition = geoJsonString => {
-  if (geoJsonString) {
-    const geoJson = JSON.parse(geoJsonString)
-    return geoJson.coordinates
-  } else {
-    return null
+const createGeoJson = (node): JSON => {
+  const geoJson = JSON.parse(node.frontmatter.coordinates)
+  geoJson.properties = {
+    popup: true,
+    slug: node.fields.slug,
+    title: node.frontmatter.title,
+    date: node.frontmatter.date,
+    content: node.frontmatter.description || node.excerpt,
   }
-}
+  return geoJson
 
-const createPlotContent = (node): JSX.Element => {
+  /*
   return (
     <div>
       <MarkerPopupTitle>
@@ -76,6 +52,7 @@ const createPlotContent = (node): JSX.Element => {
       <Content>{node.frontmatter.description || node.excerpt}</Content>
     </div>
   )
+  */
 }
 
 export const pageQuery = graphql`

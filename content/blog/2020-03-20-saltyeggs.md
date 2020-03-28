@@ -1,7 +1,7 @@
 ---
 title: My Second Post!
 date: "2015-05-06T23:46:37.121Z"
-coordinates: '{"type":"Point","coordinates":[51.505, -0.09]}'
+coordinates: '{"type":"Point","coordinates":[-0.09, 51.505]}'
 ---
 
 Wow! I love blogging so much already.

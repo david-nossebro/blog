@@ -37,6 +37,7 @@ TODO
     [X]  Add map to blog entries with a location
     [X]  Add support for "fullscreen" map
     [X]  Add support for "flight picture" layer
+    []  Fix so that blog-map works with geojson format
     []  Add support for adding plot to map in netlify cms (if possible through a widget?)
     []  Add support for plotting routes on blog-map
     []  Add support for multiple plot types on blog-map (e.g. Camp, View, Bath etc, idea is to have something pretty generic)
@@ -123,3 +124,9 @@ https://gatsby-starter-bee.netlify.com/
 https://www.gatsbyjs.org/starters/passwd10/gatsby-starter-answer/
 
 https://github.com/jackbravo/gatsby-starter-i18n-blog
+
+https://www.netlify.com/blog/2017/06/20/extending-netlify-cms-part-one-custom-widgets/
+https://openlayers.org/en/latest/apidoc/module-ol_coordinate.html#~CoordinateFormat
+https://github.com/netlify/netlify-cms/issues/3489
+
+https://github.com/netlify/netlify-cms/blob/master/CONTRIBUTING.md
