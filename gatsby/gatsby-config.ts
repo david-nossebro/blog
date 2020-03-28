@@ -33,21 +33,10 @@ export default {
         name: `assets`,
       },
     },
-    /*
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `${process.cwd()}/content/blog/images`,
-        name: `images`,
-      },
-    },
-    */
     {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
-          // This plugin makes netlify cms work with relative images.
-          // "gatsby-remark-relative-images",
           {
             resolve: `gatsby-remark-images`,
             options: {
@@ -58,6 +47,8 @@ export default {
           {
             resolve: `gatsby-remark-images-medium-zoom`,
             options: {
+              margin: 36,
+              scrollOffset: 0,
               zIndex: 2000,
             },
           },
