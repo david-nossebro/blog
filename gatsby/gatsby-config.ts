@@ -105,7 +105,12 @@ export default {
     },
     `gatsby-plugin-typescript`,
     `gatsby-plugin-styled-components`,
-    `gatsby-plugin-netlify-cms`,
+    {
+      resolve: `gatsby-plugin-netlify-cms`,
+      options: {
+        modulePath: `${process.cwd()}/src/cms/cms.js`,
+      },
+    },
     "gatsby-plugin-netlify",
   ],
 }

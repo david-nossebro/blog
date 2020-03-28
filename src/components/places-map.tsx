@@ -22,7 +22,6 @@ export interface MarkerPoint {
 }
 
 const PlacesMap = ({ markers, width, height }: PlacesMapProps): JSX.Element => {
-
   // Can not render map server side
   if (typeof window !== "undefined") {
     const bounds = getBounds(markers)

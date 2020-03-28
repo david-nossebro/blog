@@ -6,4 +6,3 @@ const BottomDivider = styled.hr`
 `
 
 export { BottomDivider }
-

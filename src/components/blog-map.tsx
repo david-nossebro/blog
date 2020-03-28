@@ -16,7 +16,6 @@ export interface BlogMapProps {
 }
 
 const BlogMap = ({ position, width, height }: BlogMapProps): JSX.Element => {
-
   // Can not render map server side
   if (typeof window !== "undefined") {
     return (

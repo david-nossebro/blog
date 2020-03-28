@@ -8,7 +8,7 @@ Wordpress2016.overrideThemeStyles = () => {
     },
     ".leaflet-container a.leaflet-popup-close-button": {
       boxShadow: `none`,
-    }
+    },
   }
 }
 

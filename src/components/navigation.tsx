@@ -28,22 +28,25 @@ const NavLink = styled(Link)`
 `
 
 const Navigation = (): JSX.Element => {
-
-
-
   return (
     <List>
       <ListItem>
         <NavLink to="/">Blog</NavLink>
       </ListItem>
       <ListItem>
-        <NavLink to="/places" activeClassName="active">Places</NavLink>
+        <NavLink to="/places" activeClassName="active">
+          Places
+        </NavLink>
       </ListItem>
       <ListItem>
-        <NavLink to="/about" activeClassName="active">About</NavLink>
+        <NavLink to="/about" activeClassName="active">
+          About
+        </NavLink>
       </ListItem>
       <ListItem>
-        <NavLink to="/contact" activeClassName="active">Contact</NavLink>
+        <NavLink to="/contact" activeClassName="active">
+          Contact
+        </NavLink>
       </ListItem>
     </List>
   )
