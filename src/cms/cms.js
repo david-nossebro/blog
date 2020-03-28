@@ -1,5 +1,8 @@
 import CMS from "netlify-cms-app"
-import withMapControl from "../netlify-cms-widgets/netlify-cms-widget-map/src/withMapControl"
-import MapPreview from "../netlify-cms-widgets/netlify-cms-widget-map/src/MapPreview"
+import withMapControl from "../components/netlify-widgets/map/withMapControl"
+import MapPreview from "../components/netlify-widgets/map/MapPreview"
 
-CMS.registerWidget("map2", withMapControl(), MapPreview)
+const MapControl = withMapControl()
+console.log("Register mymap widget!!!! - ", MapControl, " ", MapPreview)
+
+CMS.registerWidget("mymap", MapControl, MapPreview)
