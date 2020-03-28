@@ -33,6 +33,7 @@ export default {
         name: `assets`,
       },
     },
+    /*
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -40,16 +41,24 @@ export default {
         name: `images`,
       },
     },
+    */
     {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
           // This plugin makes netlify cms work with relative images.
-          "gatsby-remark-relative-images",
+          // "gatsby-remark-relative-images",
           {
             resolve: `gatsby-remark-images`,
             options: {
               maxWidth: 590,
+              linkImagesToOriginal: false,
+            },
+          },
+          {
+            resolve: `gatsby-remark-images-medium-zoom`,
+            options: {
+              zIndex: 2000,
             },
           },
           {
