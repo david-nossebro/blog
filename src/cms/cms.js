@@ -1,4 +1,5 @@
 import CMS from "netlify-cms-app"
-import NetlifyCmsWidgetMap from "../netlify-cms-widgets/netlify-cms-widget-map/src/index"
+import MapControl from "../netlify-cms-widgets/netlify-cms-widget-map/src/withMapControl"
+import MapPreview from "../netlify-cms-widgets/netlify-cms-widget-map/src/MapPreview"
 
-CMS.registerWidget(NetlifyCmsWidgetMap.Widget())
+CMS.registerWidget("map2", MapControl, MapPreview)
