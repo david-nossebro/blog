@@ -26,7 +26,9 @@ const BlogTemplate = ({ data, pageContext }): JSX.Element => {
   const title: string = data.markdownRemark.frontmatter.title
   const description: string = data.markdownRemark.frontmatter.description
   const date: Date = data.markdownRemark.frontmatter.date
-  const coordinates: Array<number> = data.markdownRemark.frontmatter.coordinates
+  const position: Array<number> = getPosition(
+    data.markdownRemark.frontmatter.coordinates
+  )
   const html: string = data.markdownRemark.html
 
   return (
@@ -38,8 +40,8 @@ const BlogTemplate = ({ data, pageContext }): JSX.Element => {
           <BlogDate>{date}</BlogDate>
         </header>
         <section dangerouslySetInnerHTML={{ __html: html }} />
-        {coordinates && (
-          <BlogMap height="350px" width="100%" position={coordinates} />
+        {position && (
+          <BlogMap height="350px" width="100%" position={position} />
         )}
         <BottomDivider />
         <footer />
@@ -50,6 +52,15 @@ const BlogTemplate = ({ data, pageContext }): JSX.Element => {
 }
 
 export default BlogTemplate
+
+const getPosition = geoJsonString => {
+  if (geoJsonString) {
+    const geoJson = JSON.parse(geoJsonString)
+    return geoJson.coordinates
+  } else {
+    return null
+  }
+}
 
 export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!) {

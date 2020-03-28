@@ -28,7 +28,12 @@ const PlacesMap = ({ markers, width, height }: PlacesMapProps): JSX.Element => {
     const bounds = getBounds(markers)
 
     return (
-      <StyledMap width={width} height={height} bounds={bounds} boundsOptions={{ padding: [50, 50] }}>
+      <StyledMap
+        width={width}
+        height={height}
+        bounds={bounds}
+        boundsOptions={{ padding: [50, 50] }}
+      >
         <LayersControl position="topright">
           <LayersControl.BaseLayer checked name="Topographic">
             <TileLayer url="https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png" />

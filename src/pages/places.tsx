@@ -45,13 +45,23 @@ const createMarkers = (data): Array<MarkerPoint> => {
   const markers = []
   data.allMarkdownRemark.edges.forEach(edge => {
     const plotContent = createPlotContent(edge.node)
+    const position = getPosition(edge.node.frontmatter.coordinates)
     markers.push({
-      position: edge.node.frontmatter.coordinates,
+      position: position,
       title: edge.node.frontmatter.title,
       content: plotContent,
     })
   })
   return markers
+}
+
+const getPosition = geoJsonString => {
+  if (geoJsonString) {
+    const geoJson = JSON.parse(geoJsonString)
+    return geoJson.coordinates
+  } else {
+    return null
+  }
 }
 
 const createPlotContent = (node): JSX.Element => {
