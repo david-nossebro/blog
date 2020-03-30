@@ -12,7 +12,7 @@ import FullscreenControl from "react-leaflet-fullscreen"
 import "react-leaflet-fullscreen/dist/styles.css"
 import styled from "styled-components"
 import typography, { rhythm, scale } from "../utils/typography"
-import { Point } from "geojson"
+import * as geojson from "geojson"
 
 const StyledMap = styled(Map)`
   width: ${props => props.width};
@@ -41,14 +41,14 @@ const Content = styled.p`
 interface Props {
   width: string
   height: string
-  geoJsonArray: Array<any> // Should be able to use the "geojson" type?
+  featureCollection: geojson.FeatureCollection<geojson.Point>
 }
 
 export default class PlacesMap extends React.PureComponent<Props, {}> {
   bounds: Array<Array<number>>
   constructor(props) {
     super(props)
-    this.bounds = getBounds(this.props.geoJsonArray)
+    this.bounds = getBounds(this.props.featureCollection)
   }
 
   render() {
@@ -74,18 +74,20 @@ export default class PlacesMap extends React.PureComponent<Props, {}> {
               title="Fullscreen"
             />
             <FeatureGroup>
-              {this.props.geoJsonArray &&
-                this.props.geoJsonArray.map((geoJson, index) => (
-                  <GeoJSON key={index} data={geoJson}>
-                    <Popup>
-                      <MarkerPopupTitle>
-                        <MarkerPopupTitleLink to={geoJson.properties.slug}>
-                          {geoJson.properties.title}
-                        </MarkerPopupTitleLink>
-                      </MarkerPopupTitle>
-                      <Date>{geoJson.properties.date}</Date>
-                      <Content>{geoJson.properties.content}</Content>
-                    </Popup>
+              {this.props.featureCollection &&
+                this.props.featureCollection.features.map((feature, index) => (
+                  <GeoJSON key={index} data={feature}>
+                    {feature.properties.popup && (
+                      <Popup>
+                        <MarkerPopupTitle>
+                          <MarkerPopupTitleLink to={feature.properties.slug}>
+                            {feature.properties.title}
+                          </MarkerPopupTitleLink>
+                        </MarkerPopupTitle>
+                        <Date>{feature.properties.date}</Date>
+                        <Content>{feature.properties.content}</Content>
+                      </Popup>
+                    )}
                   </GeoJSON>
                 ))}
             </FeatureGroup>
@@ -98,10 +100,17 @@ export default class PlacesMap extends React.PureComponent<Props, {}> {
   }
 }
 
-const getBounds = (geoJsonArray: Array<any>): Array<Array<number>> => {
+const getBounds = (
+  featureCollection: geojson.FeatureCollection<geojson.Point>
+): Array<Array<number>> => {
   const bounds = [[]]
-  geoJsonArray.forEach(geoJson => {
-    bounds.push([geoJson.coordinates[1], geoJson.coordinates[0]])
+  featureCollection.features.forEach(f => {
+    // In GeoJson the coordinates are in the order [longitude, latitude] (a third value for height can be present)
+    // In React-Leafleet location is given as [latitude, longitude]
+    bounds.push([
+      f.geometry.coordinates[1], // Latitude
+      f.geometry.coordinates[0], // Longitude
+    ])
   })
 
   return bounds

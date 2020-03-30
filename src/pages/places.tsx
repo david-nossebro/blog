@@ -2,17 +2,31 @@ import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import PlacesMap from "../components/places-map"
+//import PlacesMap from "../components/places-map"
 import { BottomDivider } from "../style/components.style"
+import L from "leaflet"
+import * as geojson from "geojson"
+import GeoJson from "../types/GeoJson"
+
+import Map from "../components/map"
 
 const Places = ({ data }): JSX.Element => {
   const siteTitle: string = data.site.siteMetadata.title
-  const geoJsonArray: Array<JSON> = createGeoJsonArray(data)
+  const featureCollection: geojson.FeatureCollection<geojson.Point> = createFeatureCollection(
+    data
+  )
 
   return (
     <Layout title={siteTitle}>
       <SEO title="Places" />
-      <PlacesMap height="450px" width="100%" geoJsonArray={geoJsonArray} />
+      <Map height="450px" width="100%" featureCollection={featureCollection} />
+      {/**
+      <PlacesMap
+        height="450px"
+        width="100%"
+        featureCollection={featureCollection}
+      />
+      */}
       <BottomDivider />
     </Layout>
   )
@@ -20,39 +34,53 @@ const Places = ({ data }): JSX.Element => {
 
 export default Places
 
-const createGeoJsonArray = (data): Array<JSON> => {
-  const geoJsonArray = []
+const createFeatureCollection = (
+  data
+): geojson.FeatureCollection<geojson.Point> => {
+  const featureCollection: geojson.FeatureCollection<geojson.Point> = {
+    features: [],
+    type: "FeatureCollection",
+  }
+
   data.allMarkdownRemark.edges.forEach(edge => {
-    const geoJson = createGeoJson(edge.node)
-    geoJsonArray.push(geoJson)
+    const feature: geojson.Feature<geojson.Point> = createFeature(edge.node)
+    featureCollection.features.push(feature)
   })
-  return geoJsonArray
+  return featureCollection
 }
 
-const createGeoJson = (node): JSON => {
-  const geoJson = JSON.parse(node.frontmatter.coordinates)
-  geoJson.properties = {
+const createFeature = (node): geojson.Feature<geojson.Point> => {
+  const geoJson: GeoJson = GeoJson.fromGeoJson(
+    JSON.parse(node.frontmatter.coordinates)
+  )
+  console.log("GeoJson: ", geoJson)
+
+  const leafletGeoJson: L.GeoJSON = L.geoJSON(
+    JSON.parse(node.frontmatter.coordinates)
+  )
+  const featureCollection: geojson.FeatureCollection = leafletGeoJson.toGeoJSON() as geojson.FeatureCollection
+
+  if (featureCollection.features.length !== 1) {
+    throw new Error("A blog entry can only have one coordinate")
+  }
+
+  const feature: geojson.Feature = featureCollection.features[0]
+
+  if (feature.geometry.type !== "Point") {
+    throw new Error("A blog entry can only have coordinates as a point")
+  }
+
+  const featurePoint = feature as geojson.Feature<geojson.Point>
+
+  feature.properties = {
     popup: true,
     slug: node.fields.slug,
     title: node.frontmatter.title,
     date: node.frontmatter.date,
     content: node.frontmatter.description || node.excerpt,
   }
-  return geoJson
 
-  /*
-  return (
-    <div>
-      <MarkerPopupTitle>
-        <MarkerPopupTitleLink to={node.fields.slug}>
-          {node.frontmatter.title}
-        </MarkerPopupTitleLink>
-      </MarkerPopupTitle>
-      <Date>{node.frontmatter.date}</Date>
-      <Content>{node.frontmatter.description || node.excerpt}</Content>
-    </div>
-  )
-  */
+  return featurePoint
 }
 
 export const pageQuery = graphql`
