@@ -2,14 +2,16 @@
 TODO
 
 [] Change language to Swedish
-[] Add first page
+[] Add first page (or somewhere else)
     [] Embedd instagram
     [] Map from In Reach
     [] Introduction text
+[] Add link to "places" from main Blog page (button or link somewhere)
 [] Redo the "Contact" page
     [] Add email
     [] Add Inreach?
     [] Add Phonenumber?
+[] Style table on "route" page
 
 [X] Netlify cms with images
 [X]  Netlify cms with Google login

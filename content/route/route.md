@@ -2,8 +2,8 @@
 title:  Färdplan
 ---
 
-Gröna Bandet är inte en färdig utmärkt led utan man ska ta sig från Grövelsjön till Treriksröset (under Covid godkänns även Abisko eftersom sista delen går genom Norge). Efter vägen finns ett antal bestämda punkter som man måste passera väster om. Vill du läsa mer om Gröna Bandet och vilka regler som finns går det att göra på deras hemsida som finns här:
-[https://www.vitagronabandet.se](https://www.vitagronabandet.se)
+Gröna Bandet är inte en färdig utmärkt led utan man ska ta sig från Grövelsjön till Treriksröset (under Covid godkänns även Abisko eftersom sista delen går genom Norge). Efter vägen finns ett antal bestämda punkter som man måste passera väster om. Vill du läsa mer om Gröna Bandet och vilka regler som finns går det att göra på deras hemsida som finns här:  
+[www.vitagronabandet.se](https://www.vitagronabandet.se)
 
 Min tilltänkta rutt ser ut såhär:
 
