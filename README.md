@@ -1,6 +1,16 @@
 
 TODO
 
+[] Change language to Swedish
+[] Add first page
+    [] Embedd instagram
+    [] Map from In Reach
+    [] Introduction text
+[] Redo the "Contact" page
+    [] Add email
+    [] Add Inreach?
+    [] Add Phonenumber?
+
 [X] Netlify cms with images
 [X]  Netlify cms with Google login
 [X]  Register with google analytics

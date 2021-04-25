@@ -3,16 +3,25 @@ import { useStaticQuery, graphql } from "gatsby"
 import Image from "gatsby-image"
 import styled from "styled-components"
 
-import { rhythm } from "../utils/typography"
+import { rhythm, scale } from "../utils/typography"
 
 const Wrapper = styled.div`
   display: flex;
-  margin-bottom: ${rhythm(1 / 4)};
+  margin-bottom: ${rhythm(1 / 2)};
 `
 
 const BioImage = styled(Image)`
   margin-right: ${rhythm(1 / 2)};
-  margin-bottom: 0;
+  margin-top: auto;
+  margin-bottom: auto;
+`
+
+const BioText = styled.p`
+  ${scale(0.001)};
+  margin-top: auto;
+  margin-bottom: auto;
+  font-size: smaller;
+  color: #525252;
 `
 
 interface Author {
@@ -63,12 +72,10 @@ const Bio = (): JSX.Element => {
           borderRadius: `50%`,
         }}
       />
-      <p>
-        Created by <strong>{author.name}</strong> {author.summary}
-        {` `}
-        You should follow him on {` `}
-        <a href={`https://instagram.com/${social.instagram}`}>Instagram</a>.
-      </p>
+      <BioText>
+        En vandring längs den skandinaviska bergskedjan från Grövelsjön till
+        Abisko (eller Treriksröset om jag hinner).
+      </BioText>
     </Wrapper>
   )
 }

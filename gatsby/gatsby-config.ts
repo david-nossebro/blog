@@ -1,6 +1,6 @@
 export default {
   siteMetadata: {
-    title: `Walk Idiot Walk`,
+    title: `Davids Gröna Band`,
     author: {
       name: `David Berg`,
       summary: `who lives in Sweden and loves outdoor adventures.`,
@@ -22,8 +22,15 @@ export default {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${process.cwd()}/content/about`,
-        name: `about`,
+        path: `${process.cwd()}/content/route`,
+        name: `route`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${process.cwd()}/content/gear`,
+        name: `gear`,
       },
     },
     {

@@ -31,21 +31,21 @@ const Navigation = (): JSX.Element => {
   return (
     <List>
       <ListItem>
-        <NavLink to="/">Blog</NavLink>
+        <NavLink to="/">Blogg</NavLink>
       </ListItem>
       <ListItem>
-        <NavLink to="/places" activeClassName="active">
-          Places
+        <NavLink to="/route" activeClassName="active">
+          Färdplan
         </NavLink>
       </ListItem>
       <ListItem>
-        <NavLink to="/about" activeClassName="active">
-          About
+        <NavLink to="/gear" activeClassName="active">
+          Utrustning
         </NavLink>
       </ListItem>
       <ListItem>
         <NavLink to="/contact" activeClassName="active">
-          Contact
+          Kontakt
         </NavLink>
       </ListItem>
     </List>

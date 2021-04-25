@@ -6,7 +6,13 @@ const createPages = async ({ graphql, actions }) => {
 
   createBlogPosts(graphql, createPage)
   createMarkdownPages(
-    "about",
+    "route",
+    "./src/templates/markdown-page-template.tsx",
+    graphql,
+    createPage
+  )
+  createMarkdownPages(
+    "gear",
     "./src/templates/markdown-page-template.tsx",
     graphql,
     createPage

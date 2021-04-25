@@ -7,8 +7,7 @@ import { BottomDivider } from "../style/components.style"
 import L from "leaflet"
 import * as geojson from "geojson"
 import GeoJson from "../types/GeoJson"
-
-import Map from "../components/map"
+import PlacesMap from "../components/places-map"
 
 const Places = ({ data }): JSX.Element => {
   const siteTitle: string = data.site.siteMetadata.title
@@ -19,14 +18,14 @@ const Places = ({ data }): JSX.Element => {
   return (
     <Layout title={siteTitle}>
       <SEO title="Places" />
-      <Map height="450px" width="100%" featureCollection={featureCollection} />
       {/**
+      <Map height="450px" width="100%" featureCollection={featureCollection} />
+      */}
       <PlacesMap
         height="450px"
         width="100%"
         featureCollection={featureCollection}
       />
-      */}
       <BottomDivider />
     </Layout>
   )

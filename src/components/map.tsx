@@ -30,6 +30,7 @@ export default class Map extends React.PureComponent<Props, {}> {
 
     this.map = L.map("map", {
       layers: [topoTileLayer],
+      zoomAnimation: false,
     })
 
     L.control

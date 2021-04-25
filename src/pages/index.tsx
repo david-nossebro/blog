@@ -2,9 +2,13 @@ import React from "react"
 import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import PlacesMap from "../components/places-map"
 import { rhythm, scale } from "../utils/typography"
 import styled from "styled-components"
 import { BottomDivider } from "../style/components.style"
+import L from "leaflet"
+import * as geojson from "geojson"
+import GeoJson from "../types/GeoJson"
 
 const HeaderSection = styled.header`
   margin-bottom: ${rhythm(1 / 4)};
