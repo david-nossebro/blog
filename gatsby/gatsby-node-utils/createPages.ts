@@ -12,6 +12,12 @@ const createPages = async ({ graphql, actions }) => {
     createPage
   )
   createMarkdownPages(
+    "foodplan",
+    "./src/templates/markdown-page-template.tsx",
+    graphql,
+    createPage
+  )
+  createMarkdownPages(
     "gear",
     "./src/templates/markdown-page-template.tsx",
     graphql,

@@ -74,7 +74,7 @@ const Bio = (): JSX.Element => {
       />
       <BioText>
         En vandring längs den skandinaviska bergskedjan från Grövelsjön till
-        Abisko (eller Treriksröset om jag hinner).
+        Abisko (och Treriksröset om jag kommer så långt).
       </BioText>
     </Wrapper>
   )

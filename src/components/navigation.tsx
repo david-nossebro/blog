@@ -39,6 +39,11 @@ const Navigation = (): JSX.Element => {
         </NavLink>
       </ListItem>
       <ListItem>
+        <NavLink to="/foodplan" activeClassName="active">
+          Matplan
+        </NavLink>
+      </ListItem>
+      <ListItem>
         <NavLink to="/gear" activeClassName="active">
           Utrustning
         </NavLink>

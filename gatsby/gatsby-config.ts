@@ -29,6 +29,13 @@ export default {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
+        path: `${process.cwd()}/content/foodplan`,
+        name: `foodplan`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
         path: `${process.cwd()}/content/gear`,
         name: `gear`,
       },
@@ -44,6 +51,12 @@ export default {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
+          {
+            resolve: `gatsby-transformer-remark`,
+            options: {
+              plugins: [`gatsby-remark-emoji`],
+            },
+          },
           {
             resolve: `gatsby-remark-images`,
             options: {
@@ -100,7 +113,7 @@ export default {
         // eslint-disable-next-line @typescript-eslint/camelcase
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `content/assets/gatsby-icon.png`,
+        icon: `content/assets/favicon-32x32.png`,
       },
     },
     `gatsby-plugin-react-helmet`,
