@@ -11,24 +11,32 @@ import PlacesMap from "../components/places-map"
 
 const Places = ({ data }): JSX.Element => {
   const siteTitle: string = data.site.siteMetadata.title
+
+  /*
   const featureCollection: geojson.FeatureCollection<geojson.Point> = createFeatureCollection(
     data
   )
+  */
 
+  /*
   return (
     <Layout title={siteTitle}>
+      
       <SEO title="Places" />
-      {/**
       <Map height="450px" width="100%" featureCollection={featureCollection} />
-      */}
+      
       <PlacesMap
         height="450px"
         width="100%"
         featureCollection={featureCollection}
       />
+      
       <BottomDivider />
     </Layout>
   )
+  */
+
+  return <h1>TODO</h1>
 }
 
 export default Places
