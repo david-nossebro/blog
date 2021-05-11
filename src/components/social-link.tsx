@@ -6,6 +6,7 @@ import {
   Slack,
   Gmail,
 } from "@icons-pack/react-simple-icons"
+import { FaPhoneAlt } from "react-icons/fa"
 import styled from "styled-components"
 import { css } from "styled-components"
 const iconStyle = css`
@@ -31,6 +32,10 @@ const SlackIcon = styled(Slack)`
 `
 
 const GmailIcon = styled(Gmail)`
+  ${iconStyle}
+`
+
+const PhoneIcon = styled(FaPhoneAlt)`
   ${iconStyle}
 `
 
@@ -60,6 +65,9 @@ const SocialLink = ({ type, href }: SocialLinkProps): JSX.Element => {
       break
     case "mail":
       socialIcon = <GmailIcon color="#D14836" />
+      break
+    case "phone":
+      socialIcon = <PhoneIcon color="#056932" />
       break
     default:
       socialIcon = <GmailIcon color="#D14836" />

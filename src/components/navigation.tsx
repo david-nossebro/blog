@@ -8,11 +8,12 @@ const List = styled.ul`
   margin: 0;
   padding: 0;
   margin-bottom: ${rhythm(1)};
+  margin-top: ${rhythm(1)};
 `
 
 const ListItem = styled.li`
   display: inline;
-  padding-right: 0.7em;
+  padding-right: 0.8em;
 
   .active {
     box-shadow: 0 1px 0 0 currentColor;
@@ -31,7 +32,12 @@ const Navigation = (): JSX.Element => {
   return (
     <List>
       <ListItem>
-        <NavLink to="/">Blogg</NavLink>
+        <NavLink to="/" activeClassName="active">Instagram</NavLink>
+      </ListItem>
+      <ListItem>
+        <NavLink to="/position" activeClassName="active">
+          Position
+        </NavLink>
       </ListItem>
       <ListItem>
         <NavLink to="/route" activeClassName="active">

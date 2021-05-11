@@ -3,9 +3,7 @@ export default {
     title: `Davids Gröna Band`,
     author: {
       name: `David Berg`,
-      summary: `who lives in Sweden and loves outdoor adventures.`,
     },
-    description: `Life is an adventure and this is mine.`,
     siteUrl: `https://epic-kilby-234579.netlify.com/`,
     social: {
       instagram: `david.nossebro`,
@@ -36,13 +34,6 @@ export default {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${process.cwd()}/content/gear`,
-        name: `gear`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
         path: `${process.cwd()}/content/assets`,
         name: `assets`,
       },
@@ -51,12 +42,6 @@ export default {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
-          {
-            resolve: `gatsby-transformer-remark`,
-            options: {
-              plugins: [`gatsby-remark-emoji`],
-            },
-          },
           {
             resolve: `gatsby-remark-images`,
             options: {
@@ -80,6 +65,7 @@ export default {
           },
           `gatsby-remark-copy-linked-files`,
           `gatsby-remark-smartypants`,
+          `gatsby-remark-emoji`,
         ],
       },
     },

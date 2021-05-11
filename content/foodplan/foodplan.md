@@ -27,7 +27,7 @@ Enligt några olika källor bör en man på runt 75 kg ligga på ett kaloriintag
 | **Middag**                                                   |                  | 964  |
 | **Total måltider**                                           |                  | 2508 |
 |                                                              |                  |      |
-| **Snacks (olika alternativ för att nå önskat kaloriintag)**  |                  |      |
+| **Snacks**                                                   |                  |      |
 | Jordnötter                                                   | 100g             | 600  |
 | Corny Big bar                                                | 50g = 1 bar      | 225  |
 | Banan                                                        | 1 st             | 100  |

@@ -1,111 +1,55 @@
-import React from "react"
-import { Link, graphql } from "gatsby"
+import React, { useEffect, useState } from "react"
+import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import PlacesMap from "../components/places-map"
-import { rhythm, scale } from "../utils/typography"
-import styled from "styled-components"
 import { BottomDivider } from "../style/components.style"
-import L from "leaflet"
-import * as geojson from "geojson"
-import GeoJson from "../types/GeoJson"
+import styled from "styled-components"
 
-const HeaderSection = styled.header`
-  margin-bottom: ${rhythm(1 / 4)};
+const PixleeContainer = styled.div`
+  padding-top: 2em;
+  padding-bottom: 1em;
 `
 
-const BlogTitle = styled.h3`
-  margin-top: 0;
-  margin-bottom: 0;
-`
-
-const BlogTitleLink = styled(Link)`
-  box-shadow: none;
-`
-
-const Date = styled.small`
-  ${scale(-1 / 5)};
-`
-
-interface Node {
-  node: Post
-}
-
-interface Post {
-  frontmatter: Frontmatter
-  fields: Fields
-  excerpt: string
-}
-
-interface Frontmatter {
-  title: string
-  date: Date
-  description: string
-}
-
-interface Fields {
-  slug: string
-}
-
-const BlogIndex = ({ data }): JSX.Element => {
+const InstagramFeed = ({ data }): JSX.Element => {
   const siteTitle: string = data.site.siteMetadata.title
-  const posts: Array<Node> = data.allMarkdownRemark.edges
+
+  // Init Pixlee Social Feed
+  useEffect(() => {
+    window.PixleeAsyncInit = function() {
+      Pixlee.init({ apiKey: "EdGORVRZh57pq_jbCsEB" })
+      Pixlee.addSimpleWidget({ widgetId: "32861" })
+    }
+
+    const scriptTag = document.createElement("script")
+    scriptTag.src =
+      "//instafeed.assets.pxlecdn.com/assets/pixlee_widget_1_0_0.js"
+    document.body.appendChild(scriptTag)
+  }, [])
 
   return (
     <Layout title={siteTitle}>
-      <SEO title="All posts" />
-      <>
-        {posts.map(({ node }: Node) => {
-          const title: string = node.frontmatter.title || node.fields.slug
-          return (
-            <article key={node.fields.slug}>
-              <HeaderSection>
-                <BlogTitle>
-                  <BlogTitleLink to={node.fields.slug}>{title}</BlogTitleLink>
-                </BlogTitle>
-                <Date>{node.frontmatter.date}</Date>
-              </HeaderSection>
-              <section>
-                <p
-                  dangerouslySetInnerHTML={{
-                    __html: node.frontmatter.description || node.excerpt,
-                  }}
-                />
-              </section>
-            </article>
-          )
-        })}
-      </>
+      <SEO title="Instagram" />
+      <div>
+        Jag kommer försöka uppdatera och lägga upp bilder så ofta jag orkar och har mobiltäckning. 
+        Förhoppningsvis har jag också något vackert eller intressant att dela med mig av, men det är inte alls säkert.
+        <br /><br />
+        För den som har Instagram går det också att följa min vandring på kontot <a href="https://www.instagram.com/davidsgronaband/"> davidsgronaband</a>.
+      </div>
+      <PixleeContainer>
+        <div id="pixlee_container" />
+      </PixleeContainer>
       <BottomDivider />
     </Layout>
   )
 }
 
-export default BlogIndex
+export default InstagramFeed
 
 export const pageQuery = graphql`
   query {
     site {
       siteMetadata {
         title
-      }
-    }
-    allMarkdownRemark(
-      filter: { fields: { collection: { eq: "blog" } } }
-      sort: { fields: [frontmatter___date], order: DESC }
-    ) {
-      edges {
-        node {
-          excerpt
-          fields {
-            slug
-          }
-          frontmatter {
-            date(formatString: "MMMM DD, YYYY")
-            title
-            description
-          }
-        }
       }
     }
   }

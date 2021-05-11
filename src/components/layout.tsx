@@ -23,10 +23,8 @@ const Wrapper = styled.div`
   }
 `
 
-const SiteTitleLink = styled(Link)`
-  box-shadow: none;
-  text-decoration: none;
-  color: inherit;
+const SiteHeaderImage = styled.img`
+  margin-bottom: 0.5em;
 `
 
 interface LayoutProps {
@@ -40,9 +38,7 @@ const Layout = ({ title, children }: LayoutProps): JSX.Element => {
       <GlobalStyles />
       <Wrapper>
         <header>
-          <h1>
-            <SiteTitleLink to={`/`}>{title}</SiteTitleLink>
-          </h1>
+          <SiteHeaderImage src="./header.jpg" />
         </header>
         <Bio />
         <Navigation />

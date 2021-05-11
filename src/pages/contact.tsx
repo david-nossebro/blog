@@ -19,23 +19,24 @@ const Contact = ({ data }): JSX.Element => {
 
   return (
     <Layout title={siteTitle}>
-      <SEO title="Contact" />
+      <SEO title="Kontakt" />
       <article>
         <p>
-          If you want to reach out to me, you can use any of the channels
-          bellow.
+          Om ni vill heja på med glada tillrop, säga hej eller av annan
+          anledning komma i kontakt med mig går det att göra via nedanstående
+          kanaler eller formuläret.
         </p>
         <p>
           <SocialLink
             type="instagram"
-            href="https://instagram.com/david.nossebro/"
+            href="https://www.instagram.com/davidsgronaband/"
           />
-          <SocialLink type="youtube" href="https://todo.do" />
-          <SocialLink type="slack" href="https://todo.do" />
-          <SocialLink type="facebook" href="https://todo.do" />
-          <SocialLink type="mail" href="https://todo.do" />
+          <SocialLink
+            type="facebook"
+            href="https://www.facebook.com/david.nossebro"
+          />
+          <SocialLink type="phone" href="tel:+46768583302" />
         </p>
-        <p>Or you can use this form.</p>
         <ContactForm success={succesfulForm} />
       </article>
       <BottomDivider />

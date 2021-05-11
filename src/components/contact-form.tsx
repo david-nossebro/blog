@@ -21,24 +21,24 @@ const ContactForm = ({ success }: ContactFormProps): JSX.Element => {
       <input type="hidden" name="form-name" value="contact" />
       <p>
         <label>
-          Name <input type="text" name="name" />
+          Namn <input type="text" name="name" />
         </label>
       </p>
       <p>
         <label>
-          Email <input type="email" name="email" />
+          Epost <input type="email" name="email" />
         </label>
       </p>
       <p>
         <label>
-          Message <textarea rows={5} cols={60} name="message" />
+          Meddelande <textarea rows={5} cols={60} name="message" />
         </label>
       </p>
       <p>
-        <button type="submit">Send</button>
+        <button type="submit">Skicka</button>
         {success && (
           <SuccessFormMessage>
-            The form was succesfully submitted, thank you!
+            Meddelandet har skickats, tack så mycket!
           </SuccessFormMessage>
         )}
       </p>

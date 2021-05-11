@@ -16,6 +16,10 @@ const BioImage = styled(Image)`
   margin-bottom: auto;
 `
 
+const ImageLink = styled.a`
+  box-shadow: none;
+`
+
 const BioText = styled.p`
   ${scale(0.001)};
   margin-top: auto;
@@ -29,14 +33,10 @@ interface Author {
   summary: string
 }
 
-interface Social {
-  instagram: string
-}
-
 const Bio = (): JSX.Element => {
   const data = useStaticQuery(graphql`
     query BioQuery {
-      avatar: file(absolutePath: { regex: "/jag2.jpg/" }) {
+      avatar: file(absolutePath: { regex: "/jag.jpg/" }) {
         childImageSharp {
           fixed(width: 50, height: 50) {
             ...GatsbyImageSharpFixed
@@ -47,7 +47,6 @@ const Bio = (): JSX.Element => {
         siteMetadata {
           author {
             name
-            summary
           }
           social {
             instagram
@@ -57,24 +56,24 @@ const Bio = (): JSX.Element => {
     }
   `)
   const { author }: { author: Author } = data.site.siteMetadata
-  const { social }: { social: Social } = data.site.siteMetadata
 
   return (
     <Wrapper>
       {/* Could not get rid of the styling in here for some reason. The gatsby image tag is weird... */}
-      <BioImage
-        fixed={data.avatar.childImageSharp.fixed}
-        alt={author.name}
-        style={{
-          minWidth: 50,
-        }}
-        imgStyle={{
-          borderRadius: `50%`,
-        }}
-      />
+      <ImageLink href="https://www.instagram.com/davidsgronaband/" target="_blank">
+        <BioImage
+          fixed={data.avatar.childImageSharp.fixed}
+          alt={author.name}
+          style={{
+            minWidth: 50,
+          }}
+          imgStyle={{
+            borderRadius: `50%`,
+          }}
+        />
+      </ImageLink>
       <BioText>
-        En vandring längs den skandinaviska bergskedjan från Grövelsjön till
-        Abisko (och Treriksröset om jag kommer så långt).
+        Jag ska gå en promenad längs den skandinaviska bergskedjan. Här kommer ni kunna ta del av mitt äventyr (om ni har intresse för det).
       </BioText>
     </Wrapper>
   )
