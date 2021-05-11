@@ -98,7 +98,6 @@ const gear = ({ data }): JSX.Element => {
     document.querySelector(
       "#\\34 07 > ul:nth-child(1) > li:nth-child(1) > span:nth-child(2)"
     ).innerHTML = "Vikt"
-
   }, [lighterpackLoaded])
 
   return (
@@ -118,12 +117,11 @@ const gear = ({ data }): JSX.Element => {
         förbrukningsvaror, där basvikten är de prylar man alltid kommer behöva
         bära med sig och förbrukningsvaror är saker som mat, vatten och
         toapapper. Min basvikt har jag lyckats få ner till ungefär 5kg, vilket
-        jag är mycket nöjd med. Under Gröna Bandet kommer då min maximala vikt
-        på ryggen ligga på ungefär 10kg. Jag räknar då med att min längsta
-        sträcka mellan proviantering kommer vara 6 dagar och att
-        förbrukningsvaror för en dag väger ungefär 700 gram. Sedan har jag
-        adderat en dag extra ifall något oförutsett händer längs vägen som gör
-        att det tar längre tid.
+        jag är mycket nöjd med. Under Gröna Bandet kommer maximala vikten på min
+        ryggsäck vara ungefär 10kg. Jag räknar då med att den längsta sträckan
+        mellan proviantering kommer vara 6 dagar och att förbrukningsvaror för
+        en dag väger ungefär 700 gram. Sedan har jag adderat en dag extra ifall
+        något oförutsett händer längs vägen som gör att det tar längre tid.
         <br />
         <br />
         För att sammanställa min packlista har jag använt mig av en hemsida som
@@ -134,11 +132,6 @@ const gear = ({ data }): JSX.Element => {
         <a href="https://lighterpack.com/r/fjtemo">länken</a>.
       </p>
       <h3>Lighterpack</h3>
-      {/*
-      <Helmet>
-        <script src="https://lighterpack.com/e/fjtemo"></script>
-      </Helmet>
-      */}
       <div id="fjtemo"></div>
       <BottomDivider />
     </Layout>
