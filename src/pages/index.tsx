@@ -14,6 +14,8 @@ const PixleeContainer = styled.div`
 const InstagramFeed = ({ data }): JSX.Element => {
   const siteTitle: string = data.site.siteMetadata.title
 
+  const [dateNow, setDateNow] = useState(Date.now())
+
   // Init Pixlee Social Feed
   useEffect(() => {
     console.log("Loding Pixlee Social Feed")
@@ -23,10 +25,16 @@ const InstagramFeed = ({ data }): JSX.Element => {
       Pixlee.addSimpleWidget({ widgetId: "32861" })
     }
 
-    // Hacky solution to make pixlee social feed reload...
-    // There is probably a better solution then reloading the entire page.
-    if (document.getElementById("pixlee_lightbox_iframe")) {
+    if (document.getElementById("pixlee_script")) {
+      // Hacky solution to make pixlee social feed reload...
+      // There is probably a better solution then reloading the entire page.
       location.reload()
+    } else {
+      const scriptTag = document.createElement("script")
+      scriptTag.src =
+        "//instafeed.assets.pxlecdn.com/assets/pixlee_widget_1_0_0.js"
+      scriptTag.id = "pixlee_script"
+      document.body.appendChild(scriptTag)
     }
   }, [])
 
@@ -50,9 +58,6 @@ const InstagramFeed = ({ data }): JSX.Element => {
         <div id="pixlee_container" />
       </PixleeContainer>
       <BottomDivider />
-      <Helmet>
-        <script src="//instafeed.assets.pxlecdn.com/assets/pixlee_widget_1_0_0.js" />
-      </Helmet>
     </Layout>
   )
 }
