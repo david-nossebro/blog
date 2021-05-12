@@ -43,7 +43,7 @@ const GlobalStyle = createGlobalStyle`
     table tr th :last-child, table tr td :last-child {
       margin-bottom: 0; }
 
-    // Lighterpack style
+    // Lighterpack styleing
     h2.lpListName {
       display: none;
     }
@@ -62,6 +62,11 @@ const GlobalStyle = createGlobalStyle`
 
     .lp a {
       box-shadow: none;
+
+    }
+
+    .lp .lpHref {
+      color: #0e4a76;
     }
 
     .lp h2 {
@@ -88,6 +93,12 @@ const GlobalStyle = createGlobalStyle`
     .lp .lpDescription {
       margin-left: 1em;
     }
+
+    /*
+    div:after {
+      content: 'gggregeg';
+    }
+    */
 `
 
 export default GlobalStyle

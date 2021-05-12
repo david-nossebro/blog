@@ -1,10 +1,11 @@
 import React, { Fragment } from "react"
-import { Link } from "gatsby"
+import { graphql, Link, useStaticQuery } from "gatsby"
 import { rhythm, scale } from "../utils/typography"
 import Navigation from "./navigation"
 import Bio from "./bio"
 import styled from "styled-components"
 import GlobalStyles from "../style/global.style"
+import Image from "gatsby-image"
 
 const Wrapper = styled.div`
   margin-left: auto;
@@ -38,7 +39,7 @@ const Layout = ({ title, children }: LayoutProps): JSX.Element => {
       <GlobalStyles />
       <Wrapper>
         <header>
-          <SiteHeaderImage src="./header.jpg" />
+          <SiteHeaderImage src="/header.jpg" />
         </header>
         <Bio />
         <Navigation />
