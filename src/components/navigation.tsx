@@ -32,7 +32,9 @@ const Navigation = (): JSX.Element => {
   return (
     <List>
       <ListItem>
-        <NavLink to="/" activeClassName="active">Instagram</NavLink>
+        <NavLink to="/" activeClassName="active">
+          Instagram
+        </NavLink>
       </ListItem>
       <ListItem>
         <NavLink to="/position" activeClassName="active">

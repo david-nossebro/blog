@@ -4,7 +4,6 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { BottomDivider } from "../style/components.style"
 import styled from "styled-components"
-import { Helmet } from "react-helmet"
 
 const PixleeContainer = styled.div`
   padding-top: 2em;
@@ -13,8 +12,6 @@ const PixleeContainer = styled.div`
 
 const InstagramFeed = ({ data }): JSX.Element => {
   const siteTitle: string = data.site.siteMetadata.title
-
-  const [dateNow, setDateNow] = useState(Date.now())
 
   // Init Pixlee Social Feed
   useEffect(() => {

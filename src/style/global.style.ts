@@ -42,7 +42,7 @@ const GlobalStyle = createGlobalStyle`
       margin-top: 0; }
     table tr th :last-child, table tr td :last-child {
       margin-bottom: 0; }
-
+      
     // Lighterpack styleing
     h2.lpListName {
       display: none;
