@@ -47,25 +47,24 @@ const InstagramFeed = ({ data }): JSX.Element => {
         Jag kommer försöka uppdatera och lägga upp bilder så ofta jag orkar och
         har mobiltäckning. Förhoppningsvis har jag också något vackert eller
         intressant att dela med mig av, men det är inte alls säkert.
-        <br />
-        <br />
-        För den som har Instagram går det att följa min vandring på kontot{" "}
-        <a
-          href="https://www.instagram.com/davidsgronaband/"
-          target="_blank"
-          rel="noreferrer"
-        >
-          {" "}
-          davidsgronaband
-        </a>
-        .
       </div>
       <br />
+
+      <iframe
+        src="https://cdn.lightwidget.com/widgets/f10a5ac659e9592b94d480fd867f549a.html"
+        scrolling="no"
+        allowTransparency={true}
+        className="lightwidget-widget"
+        style={{ width: "100%", border: 0, overflow: "hidden" }}
+      ></iframe>
+      <Helmet>
+        <script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script>
+      </Helmet>
+      {/*
       <div className="elfsight-app-0da6e883-533a-441a-a2db-3070204bc1c8" />
       <Helmet>
         <script src="https://apps.elfsight.com/p/platform.js" defer></script>
       </Helmet>
-      {/*
       <PixleeContainer>
         <div id="pixlee_container" />
       </PixleeContainer>
