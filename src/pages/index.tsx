@@ -1,19 +1,23 @@
-import React, { useEffect, useState } from "react"
+import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { BottomDivider } from "../style/components.style"
 import styled from "styled-components"
+import { Helmet } from "react-helmet"
 
+/*
 const PixleeContainer = styled.div`
   padding-top: 2em;
   padding-bottom: 1em;
 `
+*/
 
 const InstagramFeed = ({ data }): JSX.Element => {
   const siteTitle: string = data.site.siteMetadata.title
 
   // Init Pixlee Social Feed
+  /*
   useEffect(() => {
     console.log("Loding Pixlee Social Feed")
 
@@ -34,6 +38,7 @@ const InstagramFeed = ({ data }): JSX.Element => {
       document.body.appendChild(scriptTag)
     }
   }, [])
+  */
 
   return (
     <Layout title={siteTitle}>
@@ -55,9 +60,16 @@ const InstagramFeed = ({ data }): JSX.Element => {
         </a>
         .
       </div>
+      <br />
+      <div className="elfsight-app-0da6e883-533a-441a-a2db-3070204bc1c8" />
+      <Helmet>
+        <script src="https://apps.elfsight.com/p/platform.js" defer></script>
+      </Helmet>
+      {/*
       <PixleeContainer>
         <div id="pixlee_container" />
       </PixleeContainer>
+      */}
       <BottomDivider />
     </Layout>
   )
