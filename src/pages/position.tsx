@@ -22,8 +22,7 @@ const Position = ({ data }): JSX.Element => {
         <br />
         <br />
         Ser kartan nedan konstig ut på din enhet går den även att komma på via
-        den här länken:
-        <br />
+        den här länken:{" "}
         <a href="https://share.garmin.com/davidsgronaband">
           https://share.garmin.com/davidsgronaband
         </a>

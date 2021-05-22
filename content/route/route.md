@@ -5,11 +5,11 @@ title:  Färdplan
 Gröna Bandet är inte en färdig utmärkt led utan man ska ta sig från Grövelsjön till Treriksröset (under Covid godkänns även Abisko eftersom sista delen går genom Norge). Efter vägen finns ett antal bestämda punkter som man måste passera väster om. Vill du läsa mer om Gröna Bandet och vilka regler som finns går det att göra på deras hemsida som finns här:  
 [www.vitagronabandet.se](https://www.vitagronabandet.se)
 
-Min tilltänkta rutt ser ut såhär:
+Min planerade rutt ser ut såhär:
 
 ![Overview](./overview.png)
 
-Jag planerar att starta min vandring den 20/6 från Grövelsjön. I tabellen nedan ser ni de olika etapperna som går mellan olika provianteringspunkter. Jag har lite drygt 40 dagar på mig för min vandring vilket kommer bli tajt. Datumen är ungefärliga tider för när jag behöver vara på de olika delmålen, men visar det sig att min plan är för agressiv för att ge en fin upplevelse kommer jag nog ganska snart skrota den och istället ta mig så långt som jag kommer. Det primära målet är ändå att få ett härligt äventyr och spendera en längre tid i vår fina fjällmiljö. 
+Jag har tänkt starta min vandring den 20/6 från Grövelsjön. I tabellen nedan ser ni de olika etapperna som går mellan olika provianteringspunkter. Jag har lite drygt 40 dagar på mig för min vandring vilket kommer bli tajt. Datumen är ungefärliga tider för när jag behöver vara vid de olika delmålen, men visar det sig att min plan är för agressiv för att ge en fin upplevelse kommer jag nog ganska snart skrota den och istället ta mig så långt som jag kommer. Det primära målet är ändå att få ett härligt äventyr och spendera en längre tid i vår fina fjällmiljö. 
 
 Trycker man på Ortsnamnen får man fram den plottade rutten i Gaia GPS och kan studera den mer i detalj. Det går även ladda ner kml/gpx filer som innehåller all information om rutterna. Dessa brukar gå att ladda in i GPS enheter eller appar för att få samma information i en handhållen enhet som går att ha med på turen. För egen del kommer jag läsa in dessa i en Garmin InReach Mini, vilken är en mycket enkel GPS och nödsändare. 
 

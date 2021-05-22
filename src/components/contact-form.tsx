@@ -16,7 +16,8 @@ const ContactForm = ({ success }: ContactFormProps): JSX.Element => {
       name="contact"
       data-netlify="true"
       data-netlify-honeypot="bot-field"
-      action="/contact?form-success=true"
+      action="/contact/?form-success=true"
+      method="POST"
     >
       <input type="hidden" name="form-name" value="contact" />
       <p>
