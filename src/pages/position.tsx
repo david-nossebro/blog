@@ -33,7 +33,7 @@ const Position = ({ data }): JSX.Element => {
         frameBorder="0"
         marginWidth="0"
         marginHeight="0"
-        width="810"
+        width="100%"
         height="760"
       ></iframe>
     </Layout>

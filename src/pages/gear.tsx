@@ -2,7 +2,6 @@ import { graphql } from "gatsby"
 import React, { useEffect, useState } from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import Helmet from "react-helmet"
 import { BottomDivider } from "../style/components.style"
 
 const gear = ({ data }): JSX.Element => {
