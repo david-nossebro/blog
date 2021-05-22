@@ -14,6 +14,7 @@ const List = styled.ul`
 const ListItem = styled.li`
   display: inline;
   padding-right: 0.8em;
+  display: inline-block;
 
   .active {
     box-shadow: 0 1px 0 0 currentColor;

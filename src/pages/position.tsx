@@ -19,8 +19,24 @@ const Position = ({ data }): JSX.Element => {
         </a>{" "}
         med. Med hjälp av den kommer jag kunna dela min position under hela min
         tur (förutsatt att jag har batteri kvar).
+        <br />
+        <br />
+        Ser kartan nedan konstig ut på din enhet går den även att komma på via
+        den här länken:
+        <br />
+        <a href="https://share.garmin.com/KZHUA">
+          https://share.garmin.com/KZHUA
+        </a>
+        .
       </p>
-      <iframe src="https://share.garmin.com/KZHUA" frameborder="0" marginwidth="0" marginheight="0" width="810" height="760"></iframe>
+      <iframe
+        src="https://share.garmin.com/KZHUA"
+        frameBorder="0"
+        marginWidth="0"
+        marginHeight="0"
+        width="810"
+        height="760"
+      ></iframe>
     </Layout>
   )
 }

@@ -45,7 +45,11 @@ const InstagramFeed = ({ data }): JSX.Element => {
         <br />
         <br />
         För den som har Instagram går det också att följa min vandring på kontot{" "}
-        <a href="https://www.instagram.com/davidsgronaband/">
+        <a
+          href="https://www.instagram.com/davidsgronaband/"
+          target="_blank"
+          rel="noreferrer"
+        >
           {" "}
           davidsgronaband
         </a>
