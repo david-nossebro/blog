@@ -49,7 +49,7 @@ const InstagramFeed = ({ data }): JSX.Element => {
         intressant att dela med mig av, men det är inte alls säkert.
         <br />
         <br />
-        För den som har Instagram går det också att följa min vandring på kontot{" "}
+        För den som har Instagram går det att följa min vandring på kontot{" "}
         <a
           href="https://www.instagram.com/davidsgronaband/"
           target="_blank"
