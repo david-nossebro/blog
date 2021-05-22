@@ -24,13 +24,13 @@ const Position = ({ data }): JSX.Element => {
         Ser kartan nedan konstig ut på din enhet går den även att komma på via
         den här länken:
         <br />
-        <a href="https://share.garmin.com/KZHUA">
-          https://share.garmin.com/KZHUA
+        <a href="https://share.garmin.com/davidsgronaband">
+          https://share.garmin.com/davidsgronaband
         </a>
         .
       </p>
       <iframe
-        src="https://share.garmin.com/KZHUA"
+        src="https://share.garmin.com/davidsgronaband"
         frameBorder="0"
         marginWidth="0"
         marginHeight="0"
