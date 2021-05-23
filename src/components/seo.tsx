@@ -82,6 +82,7 @@ const SEO = ({ description, lang, meta, title }: SEOProps): JSX.Element => {
 SEO.defaultProps = {
   lang: `sv`,
   meta: [
+    "Davids Gröna Band",
     "Gröna Bandet",
     "GB",
     "Green Ribbon",
