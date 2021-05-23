@@ -83,6 +83,8 @@ SEO.defaultProps = {
   lang: `sv`,
   meta: [
     "Davids Gröna Band",
+    "davidsgrönaband",
+    "davidsgronaband",
     "Gröna Bandet",
     "GB",
     "Green Ribbon",
