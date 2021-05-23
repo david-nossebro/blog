@@ -1,11 +1,10 @@
 import React, { Fragment } from "react"
-import { graphql, Link, useStaticQuery } from "gatsby"
+import { Link } from "gatsby"
 import { rhythm, scale } from "../utils/typography"
 import Navigation from "./navigation"
 import Bio from "./bio"
 import styled from "styled-components"
 import GlobalStyles from "../style/global.style"
-import Image from "gatsby-image"
 
 const Wrapper = styled.div`
   margin-left: auto;
@@ -26,6 +25,8 @@ const Wrapper = styled.div`
 
 const SiteHeaderImage = styled.img`
   margin-bottom: 0.5em;
+  width: 100%;
+  height: 100%;
 `
 
 interface LayoutProps {
@@ -33,13 +34,17 @@ interface LayoutProps {
   children: Array<JSX.Element>
 }
 
-const Layout = ({ title, children }: LayoutProps): JSX.Element => {
+const Layout = ({ children }: LayoutProps): JSX.Element => {
   return (
     <Fragment>
       <GlobalStyles />
       <Wrapper>
         <header>
-          <SiteHeaderImage src="/header.jpg" />
+          <SiteHeaderImage
+            src="/header.jpg"
+            alt="Grön banner med texten 'Davids Gröna Band, Grövelsjön - Abisko och kanske Treriksröset'. 
+            I bakgrunden är ett berg med några träd i förgrunden. Bakom berget skymtar en sol. Färgerna går i grönt och gult."
+          />
         </header>
         <Bio />
         <Navigation />

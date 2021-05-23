@@ -71,12 +71,14 @@ export default {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    /*
     {
       resolve: "gatsby-plugin-react-leaflet",
       options: {
         linkStyles: true, // (default: true) Enable/disable loading stylesheets via CDN
       },
     },
+    */
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
@@ -89,15 +91,15 @@ export default {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby Starter Blog`,
+        name: `Davids Gröna Band`,
         // eslint-disable-next-line @typescript-eslint/camelcase
-        short_name: `GatsbyJS`,
+        short_name: `Davids Gröna Band`,
         // eslint-disable-next-line @typescript-eslint/camelcase
         start_url: `/`,
         // eslint-disable-next-line @typescript-eslint/camelcase
         background_color: `#ffffff`,
         // eslint-disable-next-line @typescript-eslint/camelcase
-        theme_color: `#663399`,
+        theme_color: `#ffffff`,
         display: `minimal-ui`,
         icon: `content/assets/favicon-32x32.png`,
       },

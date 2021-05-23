@@ -1,4 +1,5 @@
 import React from "react"
+/*
 import { Link } from "gatsby"
 import {
   Map,
@@ -114,4 +115,11 @@ const getBounds = (
   })
 
   return bounds
+}
+*/
+
+export default class PlacesMap extends React.PureComponent {
+  render() {
+    return null
+  }
 }

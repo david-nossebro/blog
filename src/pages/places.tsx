@@ -1,4 +1,5 @@
 import React from "react"
+/*
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -8,9 +9,10 @@ import L from "leaflet"
 import * as geojson from "geojson"
 import GeoJson from "../types/GeoJson"
 import PlacesMap from "../components/places-map"
+*/
 
 const Places = ({ data }): JSX.Element => {
-  const siteTitle: string = data.site.siteMetadata.title
+  //const siteTitle: string = data.site.siteMetadata.title
 
   /*
   const featureCollection: geojson.FeatureCollection<geojson.Point> = createFeatureCollection(
@@ -41,6 +43,7 @@ const Places = ({ data }): JSX.Element => {
 
 export default Places
 
+/*
 const createFeatureCollection = (
   data
 ): geojson.FeatureCollection<geojson.Point> => {
@@ -121,3 +124,4 @@ export const pageQuery = graphql`
     }
   }
 `
+*/

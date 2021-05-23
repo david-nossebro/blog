@@ -1,7 +1,7 @@
 {
   "name": "hiking-blog",
   "private": true,
-  "description": "A blog for my hiking adventures and gear reviews",
+  "description": "Följ min vandring av Gröna Bandet. En promenad längs den skandinaviska bergsskedjan från Grövelsjön till Treriksröset.",
   "version": "0.1.0",
   "author": "David Berg <david.nossebro@gmail.com>",
   "scripts": {
@@ -18,9 +18,7 @@
   },
   "dependencies": {
     "@icons-pack/react-simple-icons": "^2.8.0",
-    "@mdx-js/mdx": "^1.6.22",
     "@mdx-js/react": "^1.6.22",
-    "@types/geojson": "^7946.0.7",
     "add": "^2.0.6",
     "babel-plugin-styled-components": "^1.12.0",
     "gatsby": "^2.32.12",
@@ -33,7 +31,6 @@
     "gatsby-plugin-netlify-cms": "^4.10.0",
     "gatsby-plugin-offline": "^3.10.2",
     "gatsby-plugin-react-helmet": "^3.10.0",
-    "gatsby-plugin-react-leaflet": "^2.0.13",
     "gatsby-plugin-sharp": "^2.14.3",
     "gatsby-plugin-styled-components": "^3.10.0",
     "gatsby-plugin-typescript": "^2.12.1",
@@ -48,8 +45,6 @@
     "gatsby-source-instagram": "^0.9.0",
     "gatsby-transformer-remark": "^2.16.1",
     "gatsby-transformer-sharp": "^2.12.1",
-    "iframe-resizer": "^4.3.2",
-    "leaflet": "^1.7.1",
     "netlify-cms-app": "^2.14.46",
     "ol": "^5.3.1",
     "prismjs": "^1.23.0",
@@ -57,8 +52,6 @@
     "react-dom": "^16.14.0",
     "react-helmet": "^5.2.1",
     "react-icons": "^4.2.0",
-    "react-leaflet": "^2.8.0",
-    "react-leaflet-fullscreen": "^1.0.1",
     "react-typography": "^0.16.19",
     "styled-components": "^5.2.3",
     "typeface-merriweather": "0.0.72",
@@ -67,7 +60,7 @@
     "typography-theme-wordpress-2016": "^0.16.19"
   },
   "devDependencies": {
-    "@types/leaflet": "^1.5.12",
+    "@types/geojson": "^7946.0.7",
     "@types/node": "^12.20.10",
     "@types/react": "^16.14.5",
     "@types/react-dom": "^16.9.12",

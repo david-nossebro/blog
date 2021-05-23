@@ -39,8 +39,8 @@ const SEO = ({ description, lang, meta, title }: SEOProps): JSX.Element => {
       htmlAttributes={{
         lang,
       }}
-      title={title}
-      titleTemplate={`%s | ${site.siteMetadata.title}`}
+      title="Davids Gröna Band"
+      titleTemplate={`%s | Davids Gröna Band`}
       meta={[
         {
           name: `description`,
@@ -64,7 +64,7 @@ const SEO = ({ description, lang, meta, title }: SEOProps): JSX.Element => {
         },
         {
           name: `instagram:creator`,
-          content: site.siteMetadata.social.instagram,
+          content: "davidsgronaband",
         },
         {
           name: `instagram:title`,
@@ -80,9 +80,39 @@ const SEO = ({ description, lang, meta, title }: SEOProps): JSX.Element => {
 }
 
 SEO.defaultProps = {
-  lang: `en`,
-  meta: [],
-  description: ``,
+  lang: `sv`,
+  meta: [
+    "Gröna Bandet",
+    "GB",
+    "Green Ribbon",
+    "Fjällfararnas Gröna och Vita Band",
+    "Gröna Bandet 2021",
+    "Vandring",
+    "Fjällvandring",
+    "Långvandring",
+    "Friluftsliv",
+    "Hike",
+    "Kungsleden",
+    "Padjelanta",
+    "Padjelantaleden",
+    "Fjällen",
+    "Uteliv",
+    "Grövelsjön",
+    "Treriksröset",
+    "Fjäderlätt",
+    "Ultralight backpacking",
+    "Lättviktspackning",
+    "Lighterpack",
+    "Lättviktsvandring",
+    "Thru hike",
+    "Thru-hike",
+    "Thru hiking",
+    "Thru-hiking",
+    "Ultralight hiking gear",
+    "Ultralight outdoor gear",
+    "Friluftsutrustning",
+  ],
+  description: `Följ min vandring av Gröna Bandet. En promenad längs den skandinaviska bergsskedjan från Grövelsjön till Treriksröset.`,
 }
 
 SEO.propTypes = {

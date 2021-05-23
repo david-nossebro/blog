@@ -124,11 +124,25 @@ const gear = ({ data }): JSX.Element => {
         <br />
         <br />
         För att sammanställa min packlista har jag använt mig av en hemsida som
-        heter <a href="https://lighterpack.com">lighterpack</a>. Här kan man
-        lägga in alla sina prylar och dess vikt samt dela in de i olika
-        kategorier för att få en översikt. Här nedan kan ni se min lista, men ni
-        kan också hitta den hos lighterpack på den här{" "}
-        <a href="https://lighterpack.com/r/fjtemo">länken</a>.
+        heter{" "}
+        <a
+          href="https://lighterpack.com"
+          target="_blank"
+          rel="noreferrer noopener"
+        >
+          lighterpack
+        </a>
+        . Här kan man lägga in alla sina prylar och dess vikt samt dela in de i
+        olika kategorier för att få en översikt. Här nedan kan ni se min lista,
+        men ni kan också hitta den hos lighterpack på den här{" "}
+        <a
+          href="https://lighterpack.com/r/fjtemo"
+          target="_blank"
+          rel="noreferrer noopener"
+        >
+          länken
+        </a>
+        .
       </p>
       <h3>Lighterpack</h3>
       <div id="fjtemo"></div>

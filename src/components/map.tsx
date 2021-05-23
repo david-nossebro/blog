@@ -1,4 +1,6 @@
 import React from "react"
+
+/*
 import styled from "styled-components"
 import "react-leaflet-fullscreen/dist/styles.css"
 import L from "leaflet"
@@ -55,5 +57,12 @@ export default class Map extends React.PureComponent<Props, {}> {
         height={this.props.height}
       ></StyledMap>
     )
+  }
+}
+*/
+
+export default class Map extends React.PureComponent {
+  render() {
+    return null
   }
 }

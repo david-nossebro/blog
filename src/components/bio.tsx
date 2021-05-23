@@ -60,7 +60,11 @@ const Bio = (): JSX.Element => {
   return (
     <Wrapper>
       {/* Could not get rid of the styling in here for some reason. The gatsby image tag is weird... */}
-      <ImageLink href="https://www.instagram.com/davidsgronaband/" target="_blank">
+      <ImageLink
+        href="https://www.instagram.com/davidsgronaband/"
+        target="_blank"
+        rel="noreferrer noopener"
+      >
         <BioImage
           fixed={data.avatar.childImageSharp.fixed}
           alt={author.name}
@@ -73,7 +77,8 @@ const Bio = (): JSX.Element => {
         />
       </ImageLink>
       <BioText>
-        Jag ska gå en promenad längs den skandinaviska bergskedjan. Här kommer ni kunna ta del av mitt äventyr (om ni har intresse för det).
+        Jag ska gå en promenad längs den skandinaviska bergskedjan. Här kommer
+        ni kunna ta del av mitt äventyr (om ni har intresse för det).
       </BioText>
     </Wrapper>
   )

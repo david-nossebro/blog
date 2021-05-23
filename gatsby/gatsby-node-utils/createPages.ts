@@ -4,7 +4,7 @@ const path = require(`path`)
 const createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
 
-  createBlogPosts(graphql, createPage)
+  //createBlogPosts(graphql, createPage)
   createMarkdownPages(
     "route",
     "./src/templates/markdown-page-template.tsx",
@@ -27,6 +27,7 @@ const createPages = async ({ graphql, actions }) => {
 
 export default createPages
 
+/*
 const createBlogPosts = async (graphql, createPage) => {
   const blogResult = await getAllMarkdownPagesFromCollection("blog", graphql)
   const blogPosts = blogResult.data.allMarkdownRemark.edges
@@ -47,6 +48,7 @@ const createBlogPosts = async (graphql, createPage) => {
     })
   })
 }
+*/
 
 const createMarkdownPages = async (name, template, graphql, createPage) => {
   const result = await getAllMarkdownPagesFromCollection(name, graphql)

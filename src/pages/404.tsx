@@ -9,9 +9,9 @@ const NotFoundPage = ({ data }): JSX.Element => {
 
   return (
     <Layout title={siteTitle}>
-      <SEO title="404: Not Found" />
-      <h1>Not Found</h1>
-      <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
+      <SEO title="404: Sidan inte hittad" />
+      <h1>Hittar inte sidan</h1>
+      <p>Tyvärr så finns inte den här sidan. :'(</p>
     </Layout>
   )
 }

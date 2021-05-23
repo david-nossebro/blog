@@ -1,3 +1,4 @@
+/*
 import React from "react"
 import { Map, Marker, TileLayer } from "react-leaflet"
 import FullscreenControl from "react-leaflet-fullscreen"
@@ -14,6 +15,7 @@ export interface BlogMapProps {
   width: string
   height: string
 }
+
 
 const BlogMap = ({ position, width, height }: BlogMapProps): JSX.Element => {
   // Can not render map server side
@@ -32,6 +34,11 @@ const BlogMap = ({ position, width, height }: BlogMapProps): JSX.Element => {
   } else {
     return null
   }
+}
+*/
+
+const BlogMap = (): JSX.Element => {
+  return null
 }
 
 export default BlogMap

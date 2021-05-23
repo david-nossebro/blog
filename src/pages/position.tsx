@@ -23,12 +23,16 @@ const Position = ({ data }): JSX.Element => {
         <br />
         Ser kartan nedan konstig ut på din enhet går den även att komma på via
         den här länken:{" "}
-        <a href="https://share.garmin.com/davidsgronaband">
+        <a
+          href="https://share.garmin.com/davidsgronaband"
+          rel="noreferrer noopener"
+        >
           https://share.garmin.com/davidsgronaband
         </a>
         .
       </p>
       <iframe
+        title="Karta som visar min rutt och min senast kända position."
         src="https://share.garmin.com/davidsgronaband"
         frameBorder="0"
         marginWidth="0"

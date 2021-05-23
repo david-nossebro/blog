@@ -3,7 +3,6 @@ import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { BottomDivider } from "../style/components.style"
-import styled from "styled-components"
 import { Helmet } from "react-helmet"
 
 /*
@@ -51,6 +50,7 @@ const InstagramFeed = ({ data }): JSX.Element => {
       <br />
 
       <iframe
+        title="Instagramflöde"
         src="https://cdn.lightwidget.com/widgets/f10a5ac659e9592b94d480fd867f549a.html"
         scrolling="no"
         allowTransparency={true}
@@ -58,7 +58,10 @@ const InstagramFeed = ({ data }): JSX.Element => {
         style={{ width: "100%", border: 0, overflow: "hidden" }}
       ></iframe>
       <Helmet>
-        <script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script>
+        <script
+          src="https://cdn.lightwidget.com/widgets/lightwidget.js"
+          async={true}
+        ></script>
       </Helmet>
       {/*
       <div className="elfsight-app-0da6e883-533a-441a-a2db-3070204bc1c8" />

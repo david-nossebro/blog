@@ -74,7 +74,12 @@ const SocialLink = ({ type, href }: SocialLinkProps): JSX.Element => {
   }
 
   return (
-    <IconLink href={href} target="_blank" rel="noopener noreferrer">
+    <IconLink
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      title={"Kontakta mig via " + type}
+    >
       {socialIcon}
     </IconLink>
   )
