@@ -3,6 +3,7 @@ import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import PositionMap from "../components/position-map"
 
 const Position = ({ data }): JSX.Element => {
   const siteTitle = data.site.siteMetadata.title
@@ -31,15 +32,9 @@ const Position = ({ data }): JSX.Element => {
         </a>
         .
       </p>
-      <iframe
-        title="Karta som visar min rutt och min senast kända position."
-        src="https://share.garmin.com/davidsgronaband"
-        frameBorder="0"
-        marginWidth="0"
-        marginHeight="0"
-        width="100%"
-        height="760"
-      ></iframe>
+
+      <PositionMap />
+
     </Layout>
   )
 }
