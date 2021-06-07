@@ -4,6 +4,7 @@ import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import PositionMap from "../components/position-map"
+import { BottomDivider } from "../style/components.style"
 
 const Position = ({ data }): JSX.Element => {
   const siteTitle = data.site.siteMetadata.title
@@ -35,6 +36,7 @@ const Position = ({ data }): JSX.Element => {
 
       <PositionMap />
 
+      <BottomDivider />
     </Layout>
   )
 }
