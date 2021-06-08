@@ -17,49 +17,38 @@ import messageIcon from "./message.svg"
 import hikerIcon from "./hiking.svg"
 import startIcon from "./start.svg"
 
-
-
 const PositionMap = () => {
 
   if(typeof window === 'undefined') {
     return null
   }
 
-  let L = require("leaflet")
+  const L = require("leaflet")
   require("leaflet-fullscreen")
   require("leaflet-gpx")
 
   const TentIcon = L.icon({
     iconUrl: tentIcon,
-    iconSize: [40, 40],
-    popupAnchor: [0, -15],
   })
   
   const HikerIcon = L.icon({
     iconUrl: hikerIcon,
     iconSize: [40, 40],
-    popupAnchor: [10, -30],
-    iconAnchor: [10, 30],
   })
   
   const MessageIcon = L.icon({
     iconUrl: messageIcon,
     iconSize: [40, 40],
-    iconAnchor: [7, 35],
-    popupAnchor: [0, -15],
   })
   
   const StartIcon = L.icon({
     iconUrl: startIcon,
     iconSize: [40, 40],
-    iconAnchor: [20, 7],
   })
   
   const DefaultIcon = L.icon({
     iconUrl: markerIcon,
     shadowUrl: markerIconShadow,
-    iconAnchor: [13, 40],
-    popupAnchor: [0, -35],
     iconSize: [40, 40],
   })
   
@@ -126,6 +115,7 @@ const PositionMap = () => {
 
     mymap.on("zoomend", () => {
       setCurrentZoomLevel(mymap.getZoom())
+      console.log("CurrentZoomLevel: ", mymap.getZoom())
     })
     setMap(mymap)
   }, [])
@@ -232,8 +222,19 @@ const PositionMap = () => {
         // Change the icon size based on the zoom level.
         allMarkers?.forEach(m => {
           const icon = m.getIcon()
-          const size = 3 * currentZoomLevel
+
+          let size = 0
+          if(currentZoomLevel > 6) {
+            size = 3 * currentZoomLevel
+          } else if(currentZoomLevel > 5){
+            size = 2 * currentZoomLevel
+          } else {
+            size = currentZoomLevel
+          } 
+          
+          const currentSize = icon.options.iconSize[0]
           icon.options.iconSize = [size, size]
+
           m.setIcon(icon)
         })
       }
