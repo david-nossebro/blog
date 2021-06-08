@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react"
 import styled from "styled-components"
 import "leaflet/dist/leaflet.css"
 import tj from "@mapbox/togeojson"
+import "leaflet-fullscreen/dist/leaflet.fullscreen.css"
 
 const MapDiv = styled.div`
   height: 760px;
@@ -27,7 +28,6 @@ const PositionMap = () => {
   let L = require("leaflet")
   require("leaflet-fullscreen")
   require("leaflet-gpx")
-  require("leaflet-fullscreen/dist/Leaflet.fullscreen.css")
 
   const TentIcon = L.icon({
     iconUrl: tentIcon,
