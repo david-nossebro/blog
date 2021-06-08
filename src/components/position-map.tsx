@@ -36,40 +36,39 @@ const PositionMap = () => {
 
   const HikerIcon = L.icon({
     iconUrl: hikerIcon,
-    iconSize: [40, 40],
+    iconSize: [25, 25],
   })
 
   const MessageIcon = L.icon({
     iconUrl: messageIcon,
-    iconSize: [40, 40],
+    iconSize: [25, 25],
   })
 
   const StartIcon = L.icon({
     iconUrl: startIcon,
-    iconSize: [40, 40],
+    iconSize: [25, 25],
   })
 
   const CheckpointIcon = L.icon({
     iconUrl: checkpointIcon,
-    iconSize: [40, 40],
+    iconSize: [25, 25],
   })
 
   const GoalIcon = L.icon({
     iconUrl: goalIcon,
-    iconSize: [40, 40],
+    iconSize: [25, 25],
   })
 
   const DefaultIcon = L.icon({
     iconUrl: markerIcon,
     shadowUrl: markerIconShadow,
-    iconSize: [40, 40],
+    iconSize: [25, 25],
   })
 
   L.Marker.prototype.options.icon = DefaultIcon
 
   const [map, setMap] = useState<L.Map | null>(null)
   const [geoJson, setGeoJson] = useState()
-  const [currentZoomLevel, setCurrentZoomLevel] = useState(5)
   const [isInit, setIsInit] = useState(true)
   const [allMarkers, setAllMarkers] = useState<any[]>([])
 
@@ -88,9 +87,7 @@ const PositionMap = () => {
 
     const mymap: L.Map = L.map("mapid", {
       layers: [topoMap, satelit, openStreetMap],
-    }).setView([58.286395, 10.107422], 5)
-
-    mymap.addControl(new L.Control.Fullscreen())
+    }).setView([63.973740136963514, 14.164160770004948], 5)
 
     const baseMaps = {
       Openstreetmap: openStreetMap,
@@ -99,183 +96,45 @@ const PositionMap = () => {
     }
 
     L.control.layers(baseMaps).addTo(mymap)
-
     L.control.scale({ metric: true, imperial: false }).addTo(mymap)
+    mymap.addControl(new L.Control.Fullscreen())
 
-    addEtappToMap(mymap, "/etapp-1-grovelsjon-hamra.gpx")
-    addEtappToMap(mymap, "/etapp-2-hamra-are.gpx")
-    addEtappToMap(mymap, "/etapp-3-are-rotviken.gpx")
-    addEtappToMap(mymap, "/etapp-4-rotviken-gaddede.gpx")
-    addEtappToMap(mymap, "/etapp-5-gaddede-klimpfjall.gpx")
-    addEtappToMap(mymap, "/etapp-6-klimpfjall-hemavan.gpx")
-    addEtappToMap(mymap, "/etapp-7-hemavan-ammarnas.gpx")
-    addEtappToMap(mymap, "/etapp-8-ammarnas-jakkvik.gpx")
-    addEtappToMap(mymap, "/etapp-9-jakkvik-kvikkjokk.gpx")
-    addEtappToMap(mymap, "/etapp-10-kvikkjokk-staloluokta.gpx")
-    addEtappToMap(mymap, "/etapp-11-staloluokta-anonjalme.gpx")
-    addEtappToMap(mymap, "/etapp-12-ritsem-abisko.gpx")
-    //addEtappToMap(mymap, "/etapp-13-abisko-treriksroset.gpx")
+    addAllEtappToMap(mymap)
 
+    const checkpointMarkers = addCheckpointsToMap(
+      mymap,
+      StartIcon,
+      CheckpointIcon,
+      GoalIcon
+    )
     const markers: any[] = allMarkers
-
-    const startMarker = L.marker([62.098576, 12.312181], {
-      icon: StartIcon,
-    })
-    startMarker.bindPopup(
-      "<b>Grövelsjön</b><br />Etapp 1<br /><br />Här startar jag den 20/6"
-    )
-    markers.push(startMarker)
-    startMarker.addTo(mymap)
-
-    const hamraCheckpoint = L.marker([62.57449456624782, 12.22619640574676], {
-      icon: CheckpointIcon,
-    })
-    hamraCheckpoint.bindPopup(
-      "<b>Hamra</b><br />Etapp 2<br /><br />Här borde jag vara ungefär 22/6"
-    )
-    markers.push(hamraCheckpoint)
-    hamraCheckpoint.addTo(mymap)
-
-    const areCheckpoint = L.marker([63.39930326857423, 13.081613179367837], {
-      icon: CheckpointIcon,
-    })
-    areCheckpoint.bindPopup(
-      "<b>Åre</b><br />Etapp 3<br /><br />Här borde jag vara ungefär 27/6"
-    )
-    markers.push(areCheckpoint)
-    areCheckpoint.addTo(mymap)
-
-    const rotvikenCheckpoint = L.marker(
-      [63.973740136963514, 14.164160770004948],
-      {
-        icon: CheckpointIcon,
-      }
-    )
-    rotvikenCheckpoint.bindPopup(
-      "<b>Rötviken</b><br />Etapp 4<br /><br />Här borde jag vara ungefär 2/7"
-    )
-    markers.push(rotvikenCheckpoint)
-    rotvikenCheckpoint.addTo(mymap)
-
-    const gaddedeCheckpoint = L.marker(
-      [64.49929661611252, 14.142118739191982],
-      {
-        icon: CheckpointIcon,
-      }
-    )
-    gaddedeCheckpoint.bindPopup(
-      "<b>Gäddede</b><br />Etapp 5<br /><br />Här borde jag vara ungefär 5/7"
-    )
-    markers.push(gaddedeCheckpoint)
-    gaddedeCheckpoint.addTo(mymap)
-
-    const klimpfjallCheckpoint = L.marker(
-      [65.06084680056372, 14.796034927758578],
-      {
-        icon: CheckpointIcon,
-      }
-    )
-    klimpfjallCheckpoint.bindPopup(
-      "<b>Klimpfjäll</b><br />Etapp 6<br /><br />Här borde jag vara ungefär 8/7"
-    )
-    markers.push(klimpfjallCheckpoint)
-    klimpfjallCheckpoint.addTo(mymap)
-
-    const hemavanCheckpoint = L.marker(
-      [65.81919461574988, 15.084501604289215],
-      {
-        icon: CheckpointIcon,
-      }
-    )
-    hemavanCheckpoint.bindPopup(
-      "<b>Hemavan</b><br />Etapp 7<br /><br />Här borde jag vara ungefär 13/7"
-    )
-    markers.push(hemavanCheckpoint)
-    hemavanCheckpoint.addTo(mymap)
-
-    const ammarnasCheckpoint = L.marker(
-      [65.95831217769249, 16.212346014096262],
-      {
-        icon: CheckpointIcon,
-      }
-    )
-    ammarnasCheckpoint.bindPopup(
-      "<b>Ammarnäs</b><br />Etapp 8<br /><br />Här borde jag vara ungefär 16/7"
-    )
-    markers.push(ammarnasCheckpoint)
-    ammarnasCheckpoint.addTo(mymap)
-
-    const jakkvikCheckpoint = L.marker(
-      [66.39027240859454, 16.964899614110397],
-      {
-        icon: CheckpointIcon,
-      }
-    )
-    jakkvikCheckpoint.bindPopup(
-      "<b>Jäkkvik</b><br />Etapp 9<br /><br />Här borde jag vara ungefär 19/7"
-    )
-    markers.push(jakkvikCheckpoint)
-    jakkvikCheckpoint.addTo(mymap)
-
-    const kvikkjokkCheckpoint = L.marker(
-      [66.95046031431508, 17.72599102152126],
-      {
-        icon: CheckpointIcon,
-      }
-    )
-    kvikkjokkCheckpoint.bindPopup(
-      "<b>Kvikkjokk</b><br />Etapp 10<br /><br />Här borde jag vara ungefär 22/7"
-    )
-    markers.push(kvikkjokkCheckpoint)
-    kvikkjokkCheckpoint.addTo(mymap)
-
-    const staloluoktaCheckpoint = L.marker(
-      [67.32129692699093, 16.698834652358922],
-      {
-        icon: CheckpointIcon,
-      }
-    )
-    staloluoktaCheckpoint.bindPopup(
-      "<b>Stáloluokta</b><br />Etapp 11<br /><br />Här borde jag vara ungefär 25/7"
-    )
-    markers.push(staloluoktaCheckpoint)
-    staloluoktaCheckpoint.addTo(mymap)
-
-    const anonjalmeCheckpoint = L.marker(
-      [67.64583429826214, 17.37169214477333],
-      {
-        icon: CheckpointIcon,
-      }
-    )
-    anonjalmeCheckpoint.bindPopup(
-      "<b>Änonjalme</b><br /><br />Här borde jag vara ungefär 27/7"
-    )
-    markers.push(anonjalmeCheckpoint)
-    anonjalmeCheckpoint.addTo(mymap)
-
-    const ritsemCheckpoint = L.marker([67.72261633496483, 17.469227782148515], {
-      icon: CheckpointIcon,
-    })
-    ritsemCheckpoint.bindPopup(
-      "<b>Ritsem</b><br />Etapp 12<br /><br />Här borde jag vara ungefär 27/7"
-    )
-    markers.push(ritsemCheckpoint)
-    ritsemCheckpoint.addTo(mymap)
-
-    const abiskoGoal = L.marker([68.3585082424416, 18.783667012329545], {
-      icon: GoalIcon,
-    })
-    abiskoGoal.bindPopup(
-      "<b>Abisko</b><br /><br />Woho, mål! Här borde jag vara senast 2/8"
-    )
-    markers.push(abiskoGoal)
-    abiskoGoal.addTo(mymap)
-
+    markers.push(...checkpointMarkers)
     setAllMarkers(markers)
 
     mymap.on("zoomend", () => {
-      setCurrentZoomLevel(mymap.getZoom())
-      console.log("CurrentZoomLevel: ", mymap.getZoom())
+      // Change the icon size based on the zoom level.
+      console.log("allMarkers.length: ", allMarkers.length)
+      const currentZoomLevel = mymap.getZoom()
+      allMarkers?.forEach(m => {
+        const icon = m.getIcon()
+        let size = 0
+        if (currentZoomLevel > 7) {
+          size = 48
+        } else if (currentZoomLevel > 6) {
+          size = 5 * currentZoomLevel
+        } else if (currentZoomLevel > 5) {
+          size = 4 * currentZoomLevel
+        } else {
+          size = 3 * currentZoomLevel
+        }
+
+        icon.options.iconSize = [size, size]
+
+        console.log("Changing icon size: ", size)
+
+        m.setIcon(icon)
+      })
+      console.log("CurrentZoomLevel: ", currentZoomLevel)
     })
     setMap(mymap)
   }, [])
@@ -378,30 +237,30 @@ const PositionMap = () => {
         setAllMarkers(markers)
         map.fitBounds(feature.getBounds())
         setIsInit(false)
-      } else {
-        // Change the icon size based on the zoom level.
-        allMarkers?.forEach(m => {
-          const icon = m.getIcon()
-
-          let size = 0
-          if (currentZoomLevel > 6) {
-            size = 4 * currentZoomLevel
-          } else {
-            size = 2.5 * currentZoomLevel
-          }
-
-          icon.options.iconSize = [size, size]
-
-          m.setIcon(icon)
-        })
       }
     }
-  }, [geoJson, map, allMarkers, isInit, currentZoomLevel])
+  }, [geoJson, map, allMarkers, isInit])
 
   return <MapDiv id="mapid" />
 }
 
 export default PositionMap
+
+const addAllEtappToMap = map => {
+  addEtappToMap(map, "/etapp-1-grovelsjon-hamra.gpx")
+  addEtappToMap(map, "/etapp-2-hamra-are.gpx")
+  addEtappToMap(map, "/etapp-3-are-rotviken.gpx")
+  addEtappToMap(map, "/etapp-4-rotviken-gaddede.gpx")
+  addEtappToMap(map, "/etapp-5-gaddede-klimpfjall.gpx")
+  addEtappToMap(map, "/etapp-6-klimpfjall-hemavan.gpx")
+  addEtappToMap(map, "/etapp-7-hemavan-ammarnas.gpx")
+  addEtappToMap(map, "/etapp-8-ammarnas-jakkvik.gpx")
+  addEtappToMap(map, "/etapp-9-jakkvik-kvikkjokk.gpx")
+  addEtappToMap(map, "/etapp-10-kvikkjokk-staloluokta.gpx")
+  addEtappToMap(map, "/etapp-11-staloluokta-anonjalme.gpx")
+  addEtappToMap(map, "/etapp-12-ritsem-abisko.gpx")
+  //addEtappToMap(map, "/etapp-13-abisko-treriksroset.gpx")
+}
 
 const addEtappToMap = (map, etapp) => {
   new L.GPX(etapp, {
@@ -420,4 +279,145 @@ const addEtappToMap = (map, etapp) => {
       lineCap: "round",
     },
   }).addTo(map)
+}
+
+const addCheckpointsToMap = (map, StartIcon, CheckpointIcon, GoalIcon) => {
+  const markers: any[] = []
+
+  const startMarker = L.marker([62.098576, 12.312181], {
+    icon: StartIcon,
+  })
+  startMarker.bindPopup(
+    "<b>Grövelsjön</b><br />Etapp 1<br /><br />Här startar jag den 20/6"
+  )
+  markers.push(startMarker)
+  startMarker.addTo(map)
+
+  const hamraCheckpoint = L.marker([62.57449456624782, 12.22619640574676], {
+    icon: CheckpointIcon,
+  })
+  hamraCheckpoint.bindPopup(
+    "<b>Hamra</b><br />Etapp 2<br /><br />Här borde jag vara ungefär 22/6"
+  )
+  markers.push(hamraCheckpoint)
+  hamraCheckpoint.addTo(map)
+
+  const areCheckpoint = L.marker([63.39930326857423, 13.081613179367837], {
+    icon: CheckpointIcon,
+  })
+  areCheckpoint.bindPopup(
+    "<b>Åre</b><br />Etapp 3<br /><br />Här borde jag vara ungefär 27/6"
+  )
+  markers.push(areCheckpoint)
+  areCheckpoint.addTo(map)
+
+  const rotvikenCheckpoint = L.marker(
+    [63.973740136963514, 14.164160770004948],
+    {
+      icon: CheckpointIcon,
+    }
+  )
+  rotvikenCheckpoint.bindPopup(
+    "<b>Rötviken</b><br />Etapp 4<br /><br />Här borde jag vara ungefär 2/7"
+  )
+  markers.push(rotvikenCheckpoint)
+  rotvikenCheckpoint.addTo(map)
+
+  const gaddedeCheckpoint = L.marker([64.49929661611252, 14.142118739191982], {
+    icon: CheckpointIcon,
+  })
+  gaddedeCheckpoint.bindPopup(
+    "<b>Gäddede</b><br />Etapp 5<br /><br />Här borde jag vara ungefär 5/7"
+  )
+  markers.push(gaddedeCheckpoint)
+  gaddedeCheckpoint.addTo(map)
+
+  const klimpfjallCheckpoint = L.marker(
+    [65.06084680056372, 14.796034927758578],
+    {
+      icon: CheckpointIcon,
+    }
+  )
+  klimpfjallCheckpoint.bindPopup(
+    "<b>Klimpfjäll</b><br />Etapp 6<br /><br />Här borde jag vara ungefär 8/7"
+  )
+  markers.push(klimpfjallCheckpoint)
+  klimpfjallCheckpoint.addTo(map)
+
+  const hemavanCheckpoint = L.marker([65.81919461574988, 15.084501604289215], {
+    icon: CheckpointIcon,
+  })
+  hemavanCheckpoint.bindPopup(
+    "<b>Hemavan</b><br />Etapp 7<br /><br />Här borde jag vara ungefär 13/7"
+  )
+  markers.push(hemavanCheckpoint)
+  hemavanCheckpoint.addTo(map)
+
+  const ammarnasCheckpoint = L.marker([65.95831217769249, 16.212346014096262], {
+    icon: CheckpointIcon,
+  })
+  ammarnasCheckpoint.bindPopup(
+    "<b>Ammarnäs</b><br />Etapp 8<br /><br />Här borde jag vara ungefär 16/7"
+  )
+  markers.push(ammarnasCheckpoint)
+  ammarnasCheckpoint.addTo(map)
+
+  const jakkvikCheckpoint = L.marker([66.39027240859454, 16.964899614110397], {
+    icon: CheckpointIcon,
+  })
+  jakkvikCheckpoint.bindPopup(
+    "<b>Jäkkvik</b><br />Etapp 9<br /><br />Här borde jag vara ungefär 19/7"
+  )
+  markers.push(jakkvikCheckpoint)
+  jakkvikCheckpoint.addTo(map)
+
+  const kvikkjokkCheckpoint = L.marker([66.95046031431508, 17.72599102152126], {
+    icon: CheckpointIcon,
+  })
+  kvikkjokkCheckpoint.bindPopup(
+    "<b>Kvikkjokk</b><br />Etapp 10<br /><br />Här borde jag vara ungefär 22/7"
+  )
+  markers.push(kvikkjokkCheckpoint)
+  kvikkjokkCheckpoint.addTo(map)
+
+  const staloluoktaCheckpoint = L.marker(
+    [67.32129692699093, 16.698834652358922],
+    {
+      icon: CheckpointIcon,
+    }
+  )
+  staloluoktaCheckpoint.bindPopup(
+    "<b>Stáloluokta</b><br />Etapp 11<br /><br />Här borde jag vara ungefär 25/7"
+  )
+  markers.push(staloluoktaCheckpoint)
+  staloluoktaCheckpoint.addTo(map)
+
+  const anonjalmeCheckpoint = L.marker([67.64583429826214, 17.37169214477333], {
+    icon: CheckpointIcon,
+  })
+  anonjalmeCheckpoint.bindPopup(
+    "<b>Änonjalme</b><br /><br />Här borde jag vara ungefär 27/7"
+  )
+  markers.push(anonjalmeCheckpoint)
+  anonjalmeCheckpoint.addTo(map)
+
+  const ritsemCheckpoint = L.marker([67.72261633496483, 17.469227782148515], {
+    icon: CheckpointIcon,
+  })
+  ritsemCheckpoint.bindPopup(
+    "<b>Ritsem</b><br />Etapp 12<br /><br />Här borde jag vara ungefär 27/7"
+  )
+  markers.push(ritsemCheckpoint)
+  ritsemCheckpoint.addTo(map)
+
+  const abiskoGoal = L.marker([68.3585082424416, 18.783667012329545], {
+    icon: GoalIcon,
+  })
+  abiskoGoal.bindPopup(
+    "<b>Abisko</b><br /><br />Woho, mål! Här borde jag vara senast 2/8"
+  )
+  markers.push(abiskoGoal)
+  abiskoGoal.addTo(map)
+
+  return markers
 }

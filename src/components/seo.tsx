@@ -7,7 +7,7 @@ interface SEOProps {
   title: string
   description: string
   lang: string
-  meta: Array<Meta>
+  meta: Array<Meta> | undefined
 }
 
 interface Meta {
