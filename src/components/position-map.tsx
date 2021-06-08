@@ -1,11 +1,8 @@
 import React, { useEffect, useState } from "react"
 import styled from "styled-components"
 import "leaflet/dist/leaflet.css"
-import L from "leaflet"
 import tj from "@mapbox/togeojson"
-import "leaflet-fullscreen"
 import "leaflet-fullscreen/dist/Leaflet.fullscreen.css"
-import "leaflet-gpx"
 
 const MapDiv = styled.div`
   height: 760px;
@@ -20,43 +17,54 @@ import messageIcon from "./message.svg"
 import hikerIcon from "./hiking.svg"
 import startIcon from "./start.svg"
 
-const TentIcon = L.icon({
-  iconUrl: tentIcon,
-  iconSize: [40, 40],
-  popupAnchor: [0, -15],
-})
 
-const HikerIcon = L.icon({
-  iconUrl: hikerIcon,
-  iconSize: [40, 40],
-  popupAnchor: [10, -30],
-  iconAnchor: [10, 30],
-})
-
-const MessageIcon = L.icon({
-  iconUrl: messageIcon,
-  iconSize: [40, 40],
-  iconAnchor: [7, 35],
-  popupAnchor: [0, -15],
-})
-
-const StartIcon = L.icon({
-  iconUrl: startIcon,
-  iconSize: [40, 40],
-  iconAnchor: [20, 7],
-})
-
-const DefaultIcon = L.icon({
-  iconUrl: markerIcon,
-  shadowUrl: markerIconShadow,
-  iconAnchor: [13, 40],
-  popupAnchor: [0, -35],
-  iconSize: [40, 40],
-})
-
-L.Marker.prototype.options.icon = DefaultIcon
 
 const PositionMap = () => {
+
+  if(typeof window === 'undefined') {
+    return null
+  }
+
+  let L = require("leaflet")
+  require("leaflet-fullscreen")
+  require("leaflet-gpx")
+
+  const TentIcon = L.icon({
+    iconUrl: tentIcon,
+    iconSize: [40, 40],
+    popupAnchor: [0, -15],
+  })
+  
+  const HikerIcon = L.icon({
+    iconUrl: hikerIcon,
+    iconSize: [40, 40],
+    popupAnchor: [10, -30],
+    iconAnchor: [10, 30],
+  })
+  
+  const MessageIcon = L.icon({
+    iconUrl: messageIcon,
+    iconSize: [40, 40],
+    iconAnchor: [7, 35],
+    popupAnchor: [0, -15],
+  })
+  
+  const StartIcon = L.icon({
+    iconUrl: startIcon,
+    iconSize: [40, 40],
+    iconAnchor: [20, 7],
+  })
+  
+  const DefaultIcon = L.icon({
+    iconUrl: markerIcon,
+    shadowUrl: markerIconShadow,
+    iconAnchor: [13, 40],
+    popupAnchor: [0, -35],
+    iconSize: [40, 40],
+  })
+  
+  L.Marker.prototype.options.icon = DefaultIcon
+
   const [map, setMap] = useState<L.Map | null>(null)
   const [geoJson, setGeoJson] = useState()
   const [currentZoomLevel, setCurrentZoomLevel] = useState(5)
