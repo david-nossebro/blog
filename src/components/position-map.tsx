@@ -85,14 +85,19 @@ const PositionMap = () => {
       "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
     )
 
+    const lantmaterietMap = L.tileLayer(
+      "https://minkarta.lantmateriet.se/map/topowebbcache/?layer=topowebb&style=default&tilematrixset=3857&Service=WMTS&Request=GetTile&Version=1.0.0&Format=image%2Fpng&TileMatrix={z}&TileCol={x}&TileRow={y}"
+    )
+
     const mymap: L.Map = L.map("mapid", {
-      layers: [topoMap, satelit, openStreetMap],
+      layers: [topoMap, satelit, openStreetMap, lantmaterietMap],
     }).setView([63.973740136963514, 14.164160770004948], 5)
 
     const baseMaps = {
       Openstreetmap: openStreetMap,
+      "Openstreetmap Topografisk": topoMap,
       Satelit: satelit,
-      Topografisk: topoMap,
+      Lantmäteriet: lantmaterietMap,
     }
 
     L.control.layers(baseMaps).addTo(mymap)
