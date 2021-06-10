@@ -23,8 +23,7 @@ const Position = ({ data }): JSX.Element => {
         tur (förutsatt att jag har batteri kvar).
         <br />
         <br />
-        Ser kartan nedan konstig ut på din enhet går den även att komma på via
-        den här länken:{" "}
+        Ser kartan nedan konstig ut, eller funkar dåligt på din enhet går finns en annan variant här:{" "}
         <a
           href="https://share.garmin.com/davidsgronaband"
           rel="noreferrer noopener"
