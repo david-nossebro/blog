@@ -11,7 +11,10 @@ const Position = ({ data }): JSX.Element => {
 
   return (
     <Layout title={siteTitle}>
-      <SEO title="Position" />
+      <SEO
+        title="Position"
+        description="Här kan ni se hur långt jag har kommit på min vandring."
+      />
       <p>
         Här kan ni se hur det går för mig och var jag befinner mig just nu. Jag
         bär med mig en Garmin InReach vilket är en GPS/Nödsändare som man kan
