@@ -146,7 +146,8 @@ const PositionMap = () => {
 
   useEffect(() => {
     const fetchGarminData = async () => {
-      const result = await fetch("/garmin/davidsgronaband?d1=2021-01-01T00:00z")
+      //const result = await fetch("/garmin/davidsgronaband?d1=2021-01-01T00:00z")
+      const result = await fetch("/feed.kml")
       const resultText = await result.text()
       const parser = new DOMParser()
       const kml = parser.parseFromString(resultText, "text/xml")
